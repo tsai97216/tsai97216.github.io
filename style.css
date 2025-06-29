@@ -1,12 +1,11 @@
-/* --- 科技風格主題 --- */
+/* style.css 的開頭 */
 :root {
-    --primary-color: #00ffcc; /* 主題霓虹色 (青色) */
+    --primary-color: #3399FF; /* 主題霓虹色 (科技藍) */
     --background-color: #0a0a0a; /* 深黑背景 */
     --text-color: #e0e0e0; /* 主要文字顏色 */
     --dark-grey: #1a1a1a; /* 卡片背景色 */
     --glow-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color);
 }
-
 * {
     margin: 0;
     padding: 0;
