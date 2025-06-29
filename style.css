@@ -1,10 +1,10 @@
-/* --- 全局設定 --- */
+/* --- 科技風格主題 --- */
 :root {
-    --primary-color: #3498db; /* 主題色 */
-    --secondary-color: #2c3e50; /* 深色文字 */
-    --background-color: #f4f4f9; /* 淺色背景 */
-    --light-color: #ffffff; /* 白色 */
-    --border-color: #e0e0e0; /* 邊框色 */
+    --primary-color: #00ffcc; /* 主題霓虹色 (青色) */
+    --background-color: #0a0a0a; /* 深黑背景 */
+    --text-color: #e0e0e0; /* 主要文字顏色 */
+    --dark-grey: #1a1a1a; /* 卡片背景色 */
+    --glow-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color);
 }
 
 * {
@@ -18,10 +18,13 @@ html {
 }
 
 body {
-    font-family: 'Helvetica Neue', 'Arial', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-    line-height: 1.6;
+    font-family: 'Fira Code', 'Courier New', monospace; /* 使用等寬字體 */
+    line-height: 1.7;
     background-color: var(--background-color);
-    color: #333;
+    color: var(--text-color);
+    /* 可選：加入掃描線效果背景 */
+    background-image: linear-gradient(rgba(0, 255, 204, 0.05) 1px, transparent 1px);
+    background-size: 1px 3px;
 }
 
 .container {
@@ -31,21 +34,27 @@ body {
     padding: 0 2rem;
 }
 
+h1, h2, h3 {
+    color: var(--primary-color);
+    text-shadow: var(--glow-shadow);
+}
+
 h2 {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    color: var(--secondary-color);
 }
 
 section {
     padding: 4rem 0;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.2);
 }
 
 /* --- Header & Nav --- */
 header {
-    background: var(--light-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px); /* 玻璃擬態效果 */
+    box-shadow: 0 2px 5px rgba(0, 255, 204, 0.1);
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -59,9 +68,9 @@ header .container {
 }
 
 header .logo {
-    color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
+    text-shadow: var(--glow-shadow);
 }
 
 header nav ul {
@@ -72,22 +81,22 @@ header nav ul {
 header nav ul li a {
     padding: 0.5rem 1rem;
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--text-color);
     font-weight: bold;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
 }
 
 header nav ul li a:hover {
     color: var(--primary-color);
+    text-shadow: var(--glow-shadow);
 }
 
 /* --- Hero (About Me) Section --- */
 main {
-    padding-top: 70px; /* Header高度 */
+    padding-top: 70px;
 }
 
 .hero {
-    background: var(--light-color);
     text-align: center;
 }
 
@@ -97,19 +106,39 @@ main {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1.5rem;
-    border: 5px solid var(--primary-color);
+    border: 4px solid var(--primary-color);
+    box-shadow: var(--glow-shadow);
+    transition: transform 0.3s;
 }
 
-.hero h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.profile-pic:hover {
+    transform: scale(1.05);
 }
 
 .bio {
     max-width: 700px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
     font-size: 1.1rem;
-    color: #666;
+    color: #a0a0a0;
+}
+
+/* --- 打字動畫效果 --- */
+.typing-effect {
+    display: inline-block;
+    border-right: 3px solid var(--primary-color); /* 模擬游標 */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(20, end) forwards, blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary-color); }
 }
 
 /* --- Projects Section --- */
@@ -120,46 +149,37 @@ main {
 }
 
 .project-card {
-    background: var(--light-color);
+    background: var(--dark-grey);
     padding: 2rem;
+    border: 1px solid rgba(0, 255, 204, 0.3);
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
 }
 
 .project-card h3 {
-    color: var(--primary-color);
     margin-bottom: 1rem;
-}
-
-.project-card p {
-    margin-bottom: 1.5rem;
 }
 
 .project-card a {
     text-decoration: none;
-    color: var(--light-color);
+    color: var(--background-color);
     background: var(--primary-color);
     padding: 0.6rem 1.2rem;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
 }
 
 .project-card a:hover {
-    background: var(--secondary-color);
+    box-shadow: var(--glow-shadow);
 }
 
 /* --- Skills Section --- */
-#skills {
-    background: var(--light-color);
-}
-
 .skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -168,57 +188,38 @@ main {
 }
 
 .skills-list span {
-    background: var(--primary-color);
-    color: var(--light-color);
+    background: var(--dark-grey);
+    color: var(--primary-color);
     padding: 0.5rem 1.5rem;
+    border: 1px solid var(--primary-color);
     border-radius: 20px;
     font-size: 1rem;
-    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-/* --- Contact Section --- */
-#contact {
-    text-align: center;
+.skills-list span:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+    text-shadow: 0 0 5px var(--background-color);
 }
 
-.social-links {
-    margin-top: 2rem;
-}
-
+/* --- Contact & Footer --- */
 .social-links a {
     font-size: 2.5rem;
-    color: var(--secondary-color);
+    color: var(--text-color);
     margin: 0 1rem;
-    transition: color 0.3s;
+    transition: all 0.3s;
 }
 
 .social-links a:hover {
     color: var(--primary-color);
+    text-shadow: var(--glow-shadow);
+    transform: scale(1.1);
 }
 
-/* --- Footer --- */
 footer {
-    background: var(--secondary-color);
-    color: var(--light-color);
+    background: var(--dark-grey);
     text-align: center;
     padding: 1.5rem 0;
-}
-
-/* --- 響應式設計 (Responsive Design for Mobile) --- */
-@media (max-width: 768px) {
-    h2 {
-        font-size: 2rem;
-    }
-    header .container {
-        flex-direction: column;
-    }
-    header nav {
-        margin-top: 0.5rem;
-    }
-    header nav ul li a {
-        padding: 0.3rem 0.5rem;
-    }
-    main {
-        padding-top: 110px; /* 調整手機版 Header 高度 */
-    }
+    border-top: 1px solid rgba(0, 255, 204, 0.2);
 }
