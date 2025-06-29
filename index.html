@@ -1,78 +1,95 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>我的個人網頁</title>
-  <style>
-    body {
-      font-family: "微軟正黑體", sans-serif;
-      background: linear-gradient(135deg, #e0eafc, #cfdef3);
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #4a90e2;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-    main {
-      max-width: 700px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-    }
-    section {
-      margin-bottom: 30px;
-    }
-    h2 {
-      border-bottom: 2px solid #4a90e2;
-      padding-bottom: 8px;
-      margin-bottom: 15px;
-    }
-    p {
-      line-height: 1.6;
-    }
-    footer {
-      text-align: center;
-      padding: 15px 0;
-      color: #888;
-      font-size: 0.9rem;
-    }
-    a {
-      color: #4a90e2;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[你的名字] 的個人網站</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header>歡迎來到我的個人網頁</header>
-  <main>
-    <section>
-      <h2>關於我</h2>
-      <p>嗨，我是親愛的，一個熱愛學習與挑戰的學生。這裡是我的簡單介紹，雖然不怎麼厲害，但也有自己的小優點哦～</p>
-    </section>
-    <section>
-      <h2>技能</h2>
-      <p>• 程式設計基礎 (HTML, CSS, JavaScript)<br/>
-         • 問題解決與邏輯思考<br/>
-         • 持續學習新知</p>
-    </section>
-    <section>
-      <h2>聯絡我</h2>
-      <p>想和我聊天或者合作，歡迎透過 Email 聯絡：<a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    </section>
-  </main>
-  <footer>© 2025 我的個人網頁</footer>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">[你的名字]</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">關於我</a></li>
+                    <li><a href="#projects">專案</a></li>
+                    <li><a href="#skills">技能</a></li>
+                    <li><a href="#contact">聯絡我</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="hero">
+            <div class="container">
+                <img src="https://via.placeholder.com/150" alt="個人頭像" class="profile-pic">
+                <h2>你好，我是一位 [你的職稱/身份]</h2>
+                <p class="bio">
+                    歡迎來到我的個人網站。我熱衷於 [您的興趣領域一]、[您的興趣領域二] 和 [您的興趣領域三]。
+                    這是一個關於我、我的專案和我的技能的展示空間。希望能透過這個網站讓您更了解我。
+                </p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>精選專案</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>專案一標題</h3>
+                        <p>這裡是您專案的簡短描述。說明這個專案的目的、使用的技術以及您在其中扮演的角色。</p>
+                        <a href="#" target="_blank">查看專案</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>專案二標題</h3>
+                        <p>這裡是您專案的簡短描述。說明這個專案的目的、使用的技術以及您在其中扮演的角色。</p>
+                        <a href="#" target="_blank">查看專案</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>專案三標題</h3>
+                        <p>這裡是您專案的簡短描述。說明這個專案的目的、使用的技術以及您在其中扮演的角色。</p>
+                        <a href="#" target="_blank">查看專案</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>專業技能</h2>
+                <div class="skills-list">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Python</span>
+                    <span>Git & GitHub</span>
+                    <span>UI/UX 設計</span>
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>聯絡我</h2>
+                <p>如果您有任何問題或合作機會，歡迎隨時與我聯繫！</p>
+                <div class="social-links">
+                    <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:your-email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 [你的名字]. All Rights Reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
