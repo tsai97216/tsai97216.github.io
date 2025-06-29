@@ -1,0 +1,224 @@
+/* --- 全局設定 --- */
+:root {
+    --primary-color: #3498db; /* 主題色 */
+    --secondary-color: #2c3e50; /* 深色文字 */
+    --background-color: #f4f4f9; /* 淺色背景 */
+    --light-color: #ffffff; /* 白色 */
+    --border-color: #e0e0e0; /* 邊框色 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Helvetica Neue', 'Arial', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+section {
+    padding: 4rem 0;
+}
+
+/* --- Header & Nav --- */
+header {
+    background: var(--light-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+header .logo {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li a {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Hero (About Me) Section --- */
+main {
+    padding-top: 70px; /* Header高度 */
+}
+
+.hero {
+    background: var(--light-color);
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 5px solid var(--primary-color);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.bio {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* --- Projects Section --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.project-card p {
+    margin-bottom: 1.5rem;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: var(--light-color);
+    background: var(--primary-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.project-card a:hover {
+    background: var(--secondary-color);
+}
+
+/* --- Skills Section --- */
+#skills {
+    background: var(--light-color);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skills-list span {
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* --- Contact Section --- */
+#contact {
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin: 0 1rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--secondary-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/* --- 響應式設計 (Responsive Design for Mobile) --- */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+    header .container {
+        flex-direction: column;
+    }
+    header nav {
+        margin-top: 0.5rem;
+    }
+    header nav ul li a {
+        padding: 0.3rem 0.5rem;
+    }
+    main {
+        padding-top: 110px; /* 調整手機版 Header 高度 */
+    }
+}
