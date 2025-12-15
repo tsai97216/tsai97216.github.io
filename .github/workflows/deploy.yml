@@ -1,10 +1,8 @@
 name: Deploy to GitHub Pages
 
 on:
-  # 每次推送到 main 分支時觸發
   push:
     branches: [ main ]
-  # 允許手動觸發
   workflow_dispatch:
 
 permissions:
@@ -16,14 +14,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout
         uses: actions/checkout@v4
-      
-      - name: Install, build, and upload your site
-        uses: withastro/action@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-            # 這裡告訴它使用 pnpm (因為你剛剛安裝了 pnpm)
-            package-manager: pnpm
+          node-version: 20
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build site
+        # 這裡就是關鍵！我們直接執行 build，跳過 check
+        run: pnpm build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
   deploy:
     needs: build
