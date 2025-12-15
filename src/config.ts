@@ -68,6 +68,16 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa6-brands:github",
 			url: "https://github.com/tsai97216",
 		},
+		{
+			name: "",
+			icon: "fa6-solid:envelope",
+			url: "mailto:tsai97216@gmail.com",
+		},
+		{
+			name: "",
+			icon: "fa6-brands:discord",
+			url: "https://discord.com/users/850162975604080670",
+		},
 	],
 };
 
