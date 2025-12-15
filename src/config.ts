@@ -16,8 +16,8 @@ export const siteConfig: SiteConfig = {
 		fixed: false, // 允許訪客自己換顏色
 	},
 	banner: {
-		enable: false,
-		src: "assets/images/demo-banner.png", // 如果之後要加 Banner，把圖放在 src/assets/images/ 裡
+		enable: true,
+		src: "assets/images/banner.png", // 如果之後要加 Banner，把圖放在 src/assets/images/ 裡
 		position: "center",
 		credit: {
 			enable: false,
