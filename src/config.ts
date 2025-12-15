@@ -39,11 +39,19 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		LinkPreset.About,
+		
+		{
+			name: "工具箱",
+			url: "https://tsai97216.github.io/tools/" , 
+			external: true,
+		},
+		
 		{
 			name: "GitHub",
 			url: "https://github.com/tsai97216", // 已改成你的 GitHub 首頁
 			external: true,
 		},
+
 	],
 };
 
