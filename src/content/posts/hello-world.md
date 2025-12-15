@@ -15,4 +15,8 @@ draft: false
 我可以**粗體**，也可以*斜體*。
 
 還可以放程式碼：
-print("Hello World")
+```
+function helloWorld() {
+  console.log("Hello World!");
+}
+```
