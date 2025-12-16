@@ -21,7 +21,10 @@ const config = profileConfig;
     <div class="px-2">
         <div class="font-bold text-xl text-center mb-1 dark:text-neutral-50 transition">{config.name}</div>
         <div class="h-1 w-5 bg-[var(--primary)] mx-auto rounded-full mb-2 transition"></div>
-        <div class="text-center text-neutral-400 mb-2.5 transition">{config.bio}</div>
+        
+        <div class="text-center text-neutral-400 mb-2.5 transition min-h-[3rem]">
+            <span id="typewriter"></span>
+        </div>
         <div class="flex flex-wrap gap-2 justify-center mb-1">
             {config.links.length > 1 && config.links.map(item =>
                     <a rel="me" aria-label={item.name} href={item.url} target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90">
@@ -37,3 +40,21 @@ const config = profileConfig;
     </div>
 </div>
 
+<script>
+    import TypeIt from "typeit";
+
+    new TypeIt("#typewriter", {
+        speed: 50,
+        startDelay: 900,
+        loop: true,
+    })
+    .type("熱愛折騰 iOS/Android 系統。")
+    .pause(1000)
+    .delete()
+    .type("研究各種開源專案。")
+    .pause(1000)
+    .delete()
+    .type("技術宅拯救世界！")
+    .pause(2000)
+    .go();
+</script>

@@ -150,3 +150,9 @@
     }
   }
 }
+
+/* 打字機游標顏色 */
+.ti-cursor {
+    color: var(--primary);
+    font-weight: bold;
+}

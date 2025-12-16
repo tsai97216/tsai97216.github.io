@@ -16,7 +16,5 @@ draft: false
 
 還可以放程式碼：
 ```
-function helloWorld() {
-  console.log("Hello World!");
-}
+print(Hello World!!!)
 ```
