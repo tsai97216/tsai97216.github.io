@@ -5,7 +5,8 @@ import PostPage from "../components/PostPage.astro";
 import { PAGE_SIZE } from "../constants/constants";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 import { getSortedPosts } from "../utils/content-utils";
-import { Icon } from "astro-icon/components"; // 記得引入 Icon
+import { Icon } from "astro-icon/components";
+import { profileConfig } from "../config"; // 引入你的個人設定
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allBlogPosts = await getSortedPosts();
@@ -21,23 +22,33 @@ const isFirstPage = page.url.current === '/' || page.url.current === '';
 
 <MainGridLayout>
     {isFirstPage && (
-        <div class="relative flex flex-col items-center justify-center min-h-screen w-full -mt-[4rem] mb-8 onload-animation">
+        <div class="relative flex flex-col items-center justify-center min-h-screen w-full -mt-[5.5rem] mb-12 onload-animation z-10">
             
             <div class="relative group mb-8">
-                <div class="absolute -inset-1 bg-gradient-to-r from-[var(--primary)] to-blue-500 rounded-full blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
-                <img src="/avatar.png" class="relative w-40 h-40 rounded-full border-4 border-white dark:border-zinc-900 shadow-2xl mx-auto object-cover" alt="Avatar" />
+                <div class="absolute -inset-2 bg-gradient-to-r from-[var(--primary)] to-blue-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-1000 animate-pulse"></div>
+                <img src={profileConfig.avatar} class="relative w-40 h-40 rounded-full border-4 border-white/50 dark:border-white/10 shadow-2xl mx-auto object-cover transition transform group-hover:scale-105 duration-500" alt="Avatar" />
             </div>
 
-            <h1 class="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-zinc-600 dark:from-white dark:to-zinc-400">
-                Chi Tsai
+            <h1 class="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-black/80 to-black/50 dark:from-white/90 dark:to-white/60 tracking-tight">
+                {profileConfig.name}
             </h1>
 
-            <div class="text-2xl text-neutral-500 dark:text-neutral-400 h-10 font-mono font-medium">
+            <div class="text-2xl text-neutral-500 dark:text-neutral-400 h-8 font-mono font-medium mb-8">
                 <span id="hero-typewriter"></span>
             </div>
 
-            <div class="absolute bottom-20 animate-bounce cursor-pointer" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'});">
-                <Icon name="fa6-solid:chevron-down" class="text-3xl text-neutral-400 hover:text-[var(--primary)] transition"></Icon>
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                {profileConfig.links.map(item => (
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={item.name}
+                       class="flex items-center justify-center w-12 h-12 rounded-full bg-white/50 dark:bg-black/20 hover:bg-[var(--primary)] hover:text-white dark:hover:bg-[var(--primary)] backdrop-blur-md border border-black/5 dark:border-white/10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 group">
+                        <Icon name={item.icon} class="text-2xl opacity-70 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                ))}
+            </div>
+
+            <div class="absolute bottom-12 animate-bounce cursor-pointer opacity-50 hover:opacity-100 transition" 
+                 onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'});">
+                <Icon name="fa6-solid:chevron-down" class="text-3xl"></Icon>
             </div>
         </div>
     )}
@@ -49,9 +60,10 @@ const isFirstPage = page.url.current === '/' || page.url.current === '';
 {isFirstPage && (
     <script>
         import TypeIt from "typeit";
+        
         new TypeIt("#hero-typewriter", {
             speed: 60,
-            startDelay: 1000, // 進場後等 1 秒才開始打字
+            startDelay: 1500,
             loop: true,
             cursor: true,
         })
@@ -61,7 +73,7 @@ const isFirstPage = page.url.current === '/' || page.url.current === '';
         .type("熱愛 iOS & Android 客製化")
         .pause(1500)
         .delete()
-        .type("歡迎來到我的個人空間")
+        .type("永遠保持好奇心")
         .pause(2000)
         .delete()
         .go();
