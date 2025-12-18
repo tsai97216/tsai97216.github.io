@@ -5,120 +5,19 @@ import PostPage from "../components/PostPage.astro";
 import { PAGE_SIZE } from "../constants/constants";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 import { getSortedPosts } from "../utils/content-utils";
-import { Icon } from "astro-icon/components";
-import { profileConfig } from "../config";
 
 export const getStaticPaths = (async ({ paginate }) => {
-    const allBlogPosts = await getSortedPosts();
-    return paginate(allBlogPosts, { pageSize: PAGE_SIZE });
+	const allBlogPosts = await getSortedPosts();
+	return paginate(allBlogPosts, { pageSize: PAGE_SIZE });
 }) satisfies GetStaticPaths;
+// https://github.com/withastro/astro/issues/6507#issuecomment-1489916992
 
 const { page } = Astro.props;
+
 const len = page.data.length;
-const isFirstPage = page.url.current === '/' || page.url.current === '';
 ---
 
 <MainGridLayout>
-    {isFirstPage && (
-        <div id="hero-landing" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white dark:bg-[#202124] transition-transform duration-700 ease-in-out">
-            
-            <div class="flex flex-col items-center text-center px-4 animate-fade-up">
-                <div class="relative mb-6">
-                    <img src={profileConfig.avatar} class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white/20 shadow-2xl object-cover hover:scale-105 transition-transform duration-300" alt="Avatar" />
-                </div>
-
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white tracking-wide">
-                    {profileConfig.name}
-                </h1>
-
-                <div class="h-8 mb-8 flex items-center justify-center">
-                    <span id="hero-typewriter" class="text-xl md:text-2xl text-gray-500 dark:text-gray-300 font-mono"></span>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-4">
-                    {profileConfig.links.map(item => (
-                        <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={item.name}
-                           class="group flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-[var(--primary)] hover:text-white dark:hover:bg-[var(--primary)] transition-all duration-300">
-                            <Icon name={item.icon} class="text-xl text-gray-600 dark:text-gray-300 group-hover:text-white transition-colors" />
-                        </a>
-                    ))}
-                </div>
-            </div>
-
-            <div id="scroll-btn" class="absolute bottom-10 cursor-pointer animate-bounce p-2 opacity-70 hover:opacity-100 transition">
-                <Icon name="fa6-solid:chevron-down" class="text-3xl text-gray-400 dark:text-white"></Icon>
-            </div>
-        </div>
-    )}
-
-    <div id="main-content">
-        <PostPage page={page}></PostPage>
-        <Pagination class="mx-auto onload-animation" page={page} style={`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`}></Pagination>
-    </div>
+    <PostPage page={page}></PostPage>
+    <Pagination class="mx-auto onload-animation" page={page} style={`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`}></Pagination>
 </MainGridLayout>
-
-{isFirstPage && (
-    <script>
-        import TypeIt from "typeit";
-
-        // 1. 設定打字機
-        new TypeIt("#hero-typewriter", {
-            speed: 60,
-            startDelay: 1000,
-            loop: true,
-            cursor: true,
-        })
-        .type("技術宅拯救世界 🚀")
-        .pause(2000)
-        .delete()
-        .type("熱愛 iOS & Android 折騰")
-        .pause(2000)
-        .delete()
-        .type("歡迎來到我的空間")
-        .pause(3000)
-        .delete()
-        .go();
-
-        // 2. 處理捲動邏輯
-        const hero = document.getElementById('hero-landing');
-        const btn = document.getElementById('scroll-btn');
-
-        // 定義「開門」動作
-        const openGate = () => {
-            if (hero) {
-                // 整個封面往上滑走
-                hero.style.transform = 'translateY(-100%)';
-                // 讓內容可以被點擊
-                setTimeout(() => {
-                    hero.style.display = 'none';
-                }, 700);
-            }
-        };
-
-        // 點擊箭頭時觸發
-        btn?.addEventListener('click', openGate);
-
-        // (選用) 只要使用者滾動滑鼠，就自動滑開
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 10 && hero && hero.style.display !== 'none') {
-                openGate();
-            }
-        }, { once: true });
-
-    </script>
-
-    <style>
-        /* 進場動畫 */
-        .animate-fade-up {
-            animation: fadeUp 1s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
-)}
