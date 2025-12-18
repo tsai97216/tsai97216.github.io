@@ -6,7 +6,7 @@ import { PAGE_SIZE } from "../constants/constants";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 import { getSortedPosts } from "../utils/content-utils";
 import { Icon } from "astro-icon/components";
-import { profileConfig } from "../config"; // 引入你的個人設定
+import { profileConfig } from "../config";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allBlogPosts = await getSortedPosts();
@@ -15,40 +15,43 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 const { page } = Astro.props;
 const len = page.data.length;
-
-// 判斷是否為第一頁 (首頁)
 const isFirstPage = page.url.current === '/' || page.url.current === '';
 ---
 
 <MainGridLayout>
     {isFirstPage && (
-        <div class="relative flex flex-col items-center justify-center min-h-screen w-full -mt-[5.5rem] mb-12 onload-animation z-10">
+        <div id="welcome-screen" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white dark:bg-[#121212] transition-transform duration-700 ease-in-out">
             
-            <div class="relative group mb-8">
-                <div class="absolute -inset-2 bg-gradient-to-r from-[var(--primary)] to-blue-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-1000 animate-pulse"></div>
-                <img src={profileConfig.avatar} class="relative w-40 h-40 rounded-full border-4 border-white/50 dark:border-white/10 shadow-2xl mx-auto object-cover transition transform group-hover:scale-105 duration-500" alt="Avatar" />
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--primary)] opacity-10 blur-[100px] rounded-full animate-pulse"></div>
             </div>
 
-            <h1 class="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-black/80 to-black/50 dark:from-white/90 dark:to-white/60 tracking-tight">
-                {profileConfig.name}
-            </h1>
+            <div class="z-10 flex flex-col items-center text-center">
+                <div class="relative group mb-8">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-[var(--primary)] to-blue-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                    <img src={profileConfig.avatar} class="relative w-40 h-40 rounded-full border-4 border-white/50 dark:border-white/10 shadow-2xl mx-auto object-cover transition transform group-hover:scale-105 duration-500" alt="Avatar" />
+                </div>
 
-            <div class="text-2xl text-neutral-500 dark:text-neutral-400 h-8 font-mono font-medium mb-8">
-                <span id="hero-typewriter"></span>
+                <h1 class="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-black to-zinc-600 dark:from-white dark:to-zinc-400 tracking-tight">
+                    {profileConfig.name}
+                </h1>
+
+                <div class="text-2xl text-neutral-500 dark:text-neutral-400 h-8 font-mono font-medium mb-10">
+                    <span id="hero-typewriter"></span>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    {profileConfig.links.map(item => (
+                        <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={item.name}
+                           class="flex items-center justify-center w-12 h-12 rounded-full bg-black/5 dark:bg-white/10 hover:bg-[var(--primary)] hover:text-white dark:hover:bg-[var(--primary)] backdrop-blur-md transition-all duration-300 hover:scale-110 hover:-translate-y-1">
+                            <Icon name={item.icon} class="text-2xl" />
+                        </a>
+                    ))}
+                </div>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-4 mb-16">
-                {profileConfig.links.map(item => (
-                    <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={item.name}
-                       class="flex items-center justify-center w-12 h-12 rounded-full bg-white/50 dark:bg-black/20 hover:bg-[var(--primary)] hover:text-white dark:hover:bg-[var(--primary)] backdrop-blur-md border border-black/5 dark:border-white/10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 group">
-                        <Icon name={item.icon} class="text-2xl opacity-70 group-hover:opacity-100 transition-opacity" />
-                    </a>
-                ))}
-            </div>
-
-            <div class="absolute bottom-12 animate-bounce cursor-pointer opacity-50 hover:opacity-100 transition" 
-                 onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'});">
-                <Icon name="fa6-solid:chevron-down" class="text-3xl"></Icon>
+            <div id="enter-btn" class="absolute bottom-12 cursor-pointer animate-bounce p-4 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition">
+                <Icon name="fa6-solid:chevron-down" class="text-3xl text-neutral-400"></Icon>
             </div>
         </div>
     )}
@@ -60,10 +63,11 @@ const isFirstPage = page.url.current === '/' || page.url.current === '';
 {isFirstPage && (
     <script>
         import TypeIt from "typeit";
-        
+
+        // 1. 打字機設定
         new TypeIt("#hero-typewriter", {
             speed: 60,
-            startDelay: 1500,
+            startDelay: 1000,
             loop: true,
             cursor: true,
         })
@@ -77,5 +81,32 @@ const isFirstPage = page.url.current === '/' || page.url.current === '';
         .pause(2000)
         .delete()
         .go();
+
+        // 2. 開門互動邏輯
+        const screen = document.getElementById('welcome-screen');
+        const btn = document.getElementById('enter-btn');
+
+        // 定義消失函式
+        const dismissScreen = () => {
+            if(screen) {
+                // 往上滑動消失
+                screen.style.transform = 'translateY(-100%)';
+                // 等動畫跑完後，設定為不可見，避免擋住點擊
+                setTimeout(() => {
+                    screen.style.display = 'none';
+                }, 700);
+            }
+        };
+
+        // 點擊箭頭觸發
+        btn?.addEventListener('click', dismissScreen);
+
+        // (選用) 滾動觸發：如果使用者一滾動滑鼠，就自動開門
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                dismissScreen();
+            }
+        }, { once: true }); // 只觸發一次
+
     </script>
 )}
