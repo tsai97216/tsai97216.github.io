@@ -5,6 +5,7 @@ import PostPage from "../components/PostPage.astro";
 import { PAGE_SIZE } from "../constants/constants";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 import { getSortedPosts } from "../utils/content-utils";
+import { Icon } from "astro-icon/components"; // 記得引入 Icon
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allBlogPosts = await getSortedPosts();
@@ -20,16 +21,23 @@ const isFirstPage = page.url.current === '/' || page.url.current === '';
 
 <MainGridLayout>
     {isFirstPage && (
-        <div class="flex flex-col items-center justify-center min-h-[60vh] text-center mb-12 onload-animation">
-            <div class="relative group mb-6">
-                <div class="absolute -inset-1 bg-gradient-to-r from-[var(--primary)] to-purple-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                <img src="/avatar.png" class="relative w-32 h-32 rounded-full border-4 border-white dark:border-zinc-900 shadow-2xl mx-auto object-cover" alt="Avatar" />
+        <div class="relative flex flex-col items-center justify-center min-h-screen w-full -mt-[4rem] mb-8 onload-animation">
+            
+            <div class="relative group mb-8">
+                <div class="absolute -inset-1 bg-gradient-to-r from-[var(--primary)] to-blue-500 rounded-full blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+                <img src="/avatar.png" class="relative w-40 h-40 rounded-full border-4 border-white dark:border-zinc-900 shadow-2xl mx-auto object-cover" alt="Avatar" />
             </div>
-            <h1 class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-black to-zinc-500 dark:from-white dark:to-zinc-400">
+
+            <h1 class="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-zinc-600 dark:from-white dark:to-zinc-400">
                 Chi Tsai
             </h1>
-            <div class="text-xl text-neutral-500 dark:text-neutral-400 h-8 font-mono">
+
+            <div class="text-2xl text-neutral-500 dark:text-neutral-400 h-10 font-mono font-medium">
                 <span id="hero-typewriter"></span>
+            </div>
+
+            <div class="absolute bottom-20 animate-bounce cursor-pointer" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'});">
+                <Icon name="fa6-solid:chevron-down" class="text-3xl text-neutral-400 hover:text-[var(--primary)] transition"></Icon>
             </div>
         </div>
     )}
@@ -42,9 +50,10 @@ const isFirstPage = page.url.current === '/' || page.url.current === '';
     <script>
         import TypeIt from "typeit";
         new TypeIt("#hero-typewriter", {
-            speed: 70,
-            startDelay: 500,
+            speed: 60,
+            startDelay: 1000, // 進場後等 1 秒才開始打字
             loop: true,
+            cursor: true,
         })
         .type("技術宅拯救世界 🚀")
         .pause(1500)
@@ -53,7 +62,7 @@ const isFirstPage = page.url.current === '/' || page.url.current === '';
         .pause(1500)
         .delete()
         .type("歡迎來到我的個人空間")
-        .pause(1500)
+        .pause(2000)
         .delete()
         .go();
     </script>
