@@ -43,10 +43,10 @@ chmod +x alist
 ./alist server --data /opt/alist/data
 ```
 確認產生：
-```
+
 * config.json
 * data.db
-```
+  
 完成後 Ctrl + C 停止
 
 ⸻
@@ -90,9 +90,8 @@ curl http://127.0.0.1:5244
 /opt/alist/alist admin
 ```
 會顯示：
-```
 admin + 初始密碼（只出現一次）
-```
+
 ⸻
 
 9. 安裝 Cloudflared
