@@ -10,14 +10,14 @@ draft: false
 # AList + Cloudflare Tunnel 完整部署教學
 使用 Ubuntu VPS ，部署 AList 並使用 systemd 管理，最後透過 Cloudflare Tunnel 對外提供穩定存取。
 ---
-# 1. 系統更新與基礎工具
+1. 系統更新與基礎工具
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y curl wget tar unzip
 ```
 ⸻
 
-# 2. 建立 AList 目錄
+2. 建立 AList 目錄
 ```
 sudo mkdir -p /opt/alist
 sudo mkdir -p /opt/alist/data
@@ -29,7 +29,7 @@ cd /opt/alist
 
 ⸻
 
-# 3. 下載 AList
+3. 下載 AList
 ```
 cd /opt/alist
 curl -L https://github.com/AlistGo/alist/releases/latest/download/alist-linux-amd64.tar.gz -o alist.tar.gz
@@ -38,7 +38,7 @@ chmod +x alist
 ```
 ⸻
 
-# 4. 初始化 AList
+4. 初始化 AList
 ```
 ./alist server --data /opt/alist/data
 ```
@@ -51,7 +51,7 @@ chmod +x alist
 
 ⸻
 
-# 5. 建立 systemd 服務
+5. 建立 systemd 服務
 ```
 sudo tee /etc/systemd/system/alist.service > /dev/null <<EOF
 [Unit]
@@ -69,7 +69,7 @@ EOF
 ```
 ⸻
 
-# 6. 啟動 AList
+6. 啟動 AList
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable alist
@@ -77,7 +77,7 @@ sudo systemctl start alist
 ```
 ⸻
 
-# 7. 測試本機
+7. 測試本機
 ```
 curl http://127.0.0.1:5244
 ```
@@ -85,7 +85,7 @@ curl http://127.0.0.1:5244
 
 ⸻
 
-# 8. 取得管理員帳號
+8. 取得管理員帳號
 ```
 /opt/alist/alist admin
 ```
@@ -95,26 +95,26 @@ admin + 初始密碼（只出現一次）
 ```
 ⸻
 
-# 9. 安裝 Cloudflared
+9. 安裝 Cloudflared
 ```
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
 sudo dpkg -i cloudflared-linux-amd64.deb
 ```
 ⸻
 
-# 10. 登入 Cloudflare
+10. 登入 Cloudflare
 ```
 cloudflared tunnel login
 ```
 ⸻
 
-# 11. 建立 Tunnel
+11. 建立 Tunnel
 ```
 cloudflared tunnel create alist-tunnel
 ```
 ⸻
 
-# 12. 設定 Tunnel
+12. 設定 Tunnel
 ```
 sudo mkdir -p /etc/cloudflared
 sudo nano /etc/cloudflared/config.yml
@@ -130,27 +130,27 @@ ingress:
 ```
 ⸻
 
-# 13. 綁定 DNS
+13. 綁定 DNS
 ```
 cloudflared tunnel route dns alist-tunnel alist.example.com
 ```
 ⸻
 
-# 14. 啟動 Tunnel
+14. 啟動 Tunnel
 ```
 sudo systemctl enable cloudflared
 sudo systemctl restart cloudflared
 ```
 ⸻
 
-# 15. 最終測試
+15. 最終測試
 ```
 curl http://127.0.0.1:5244
 https://alist.example.com
 ```
 ⸻
 
-# 16. 常見問題
+16. 常見問題
 
 port 被佔用
 ```
