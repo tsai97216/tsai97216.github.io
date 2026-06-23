@@ -12,8 +12,6 @@ draft: false
 - Docker 部署 BiliBiliToolPro
 - 127.0.0.1 本地綁定（不對外開放 port）
 - Cloudflare Tunnel 對外存取
-- Cloudflare Access 身份驗證
-- 與既有服務（如 Twitch Miner）共存
 ---
 # 架構總覽
 
