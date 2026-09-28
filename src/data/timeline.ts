@@ -1,91 +1,56 @@
 /**
- * 时间线页数据源（纯内容）。
- * 页面展示与筛选规则由 src/config/timelineConfig.ts 控制。
+ * 時間線頁資料源（純內容）。
+ * 頁面展示與篩選規則由 src/config/timelineConfig.ts 控制。
+ *
+ * 只放已經發生、而且適合公開在個人網站上的節點。
  */
 import type { TimelineItem } from "@/types/timelineConfig";
 
 export const timelineData: TimelineItem[] = [
 	{
-		title: "Shirone Theme M3E Major Architecture Upgrade",
-		date: "2026.08",
-		category: "milestone",
-		subtitle: "Open Source Project",
-		description:
-			"Refactored the entire blog theme into a Material 3 Expressive atomic component system with token-driven styling, complete keyboard navigation, and full accessibility compliance.",
-		highlights: [
-			"Implemented dynamic HCT palette calculation and state layer tokens",
-			"Added multi-page capabilities: Timeline, Skills, Projects, and Protected Albums",
-			"Zero-error strict type-checking and automated visual regression locks",
-		],
-		tags: ["Astro", "Svelte 5", "M3E", "Tailwind 4"],
-		links: [
-			{
-				label: "GitHub Repository",
-				url: "https://github.com/LyraVoid/Shirone",
-				icon: "fa6-brands:github",
-			},
-		],
-		icon: "material-symbols:rocket-launch-rounded",
-		featured: true,
-	},
-	{
-		title: "Senior Frontend Engineer",
-		date: "2025.03 – Present",
-		category: "career",
-		subtitle: "Technology Lab",
-		location: "Tokyo, Japan",
-		description:
-			"Leading frontend architecture, web performance optimization, and interactive design system development for modern web platforms.",
-		highlights: [
-			"Spearheaded design system unification across web products",
-			"Reduced core bundle load times by 40% using modern SSR and asset pipelines",
-		],
-		tags: ["TypeScript", "Architecture", "Performance", "Design System"],
-		icon: "material-symbols:work-rounded",
-		featured: true,
-	},
-	{
-		title: "Full-Stack Web Application Launch",
-		date: "2024.11",
-		category: "project",
-		subtitle: "Independent Creation",
-		description:
-			"Designed and built an end-to-end creative workflow application with real-time collaboration and cloud synchronization.",
-		highlights: [
-			"Designed intuitive fluid canvas interface with low-latency interaction",
-			"Built serverless backend APIs with edge caching and relational persistence",
-		],
-		tags: ["Svelte", "Node.js", "PostgreSQL", "Cloudflare"],
-		icon: "material-symbols:deployed-code-outline-rounded",
-	},
-	{
-		title: "Computer Science & Engineering Degree",
-		date: "2020.09 – 2024.06",
+		title: "開始準備下一次學測",
+		date: "2026.09",
 		category: "education",
-		subtitle: "University of Technology",
-		location: "Hangzhou, China",
+		subtitle: "Study",
 		description:
-			"Focused on computer systems, software engineering, human-computer interaction, and distributed architectures.",
-		highlights: [
-			"Graduated with honors and outstanding graduate thesis award",
-			"Led university open source student community and hackathons",
-		],
-		tags: ["Computer Science", "Algorithms", "Software Engineering"],
+			"把目前的重心放回學測準備，重新整理讀書節奏，也開始更認真記錄每天正在做的事。",
+		tags: ["學測", "學習", "生活"],
+		icon: "material-symbols:school-rounded",
+		featured: true,
+	},
+	{
+		title: "開始第二階段的學測準備",
+		date: "2026.07",
+		category: "education",
+		subtitle: "再戰學測",
+		description:
+			"開始新的學測準備階段，逐漸建立固定的課程、通勤與複習節奏。",
+		tags: ["學測", "準備"],
+		icon: "material-symbols:menu-book-rounded",
+	},
+	{
+		title: "高中畢業",
+		date: "2026.06",
+		category: "education",
+		subtitle: "High School",
+		description:
+			"完成高中階段，正式進入下一段人生。",
+		tags: ["畢業", "高中"],
 		icon: "material-symbols:school-rounded",
 	},
 	{
-		title: "Started Personal Blog & Tech Notes",
-		date: "2022.04",
-		category: "life",
-		subtitle: "First Step into Tech Writing",
+		title: "開始整理自己的網路專案",
+		date: "2026",
+		category: "project",
+		subtitle: "Personal Projects",
 		description:
-			"Published my first article online and began documenting frontend exploration, creative coding, and personal reflections.",
-		tags: ["Blogging", "Writing", "Open Web"],
-		icon: "material-symbols:edit-note-rounded",
+			"陸續維護個人網站、AltStore Sources、Chi Merch 與 Free Games Claimer 等專案，開始把零散的嘗試整理成可以長期維護的東西。",
+		tags: ["GitHub", "Astro", "Cloudflare", "Projects"],
+		icon: "material-symbols:code-rounded",
 	},
 ];
 
-/** 获取所有时间线数据列表 */
+/** 取得所有時間線資料列表 */
 export function getTimelineList(): TimelineItem[] {
 	return timelineData;
 }
