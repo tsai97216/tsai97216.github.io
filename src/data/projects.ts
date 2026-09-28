@@ -1,49 +1,60 @@
-/**
- * 项目页数据源（纯内容）。
- * 页面展示与筛选规则由 src/config/projectsConfig.ts 控制。
- */
 import type { ProjectItem } from "@/types/projectsConfig";
 
 export const projectsData: ProjectItem[] = [
 	{
-		key: "shirone",
-		title: "Shirone",
+		key: "chi-personal-site",
+		title: "Chi 個人網站",
 		summary:
-			"An Astro blog theme shaped around an M3E component system, expressive content, and resilient client navigation.",
-		category: "theme",
+			"正在打造的個人網站，整理自己的作品、設備、遊戲、時間軸與日常紀錄。",
+		category: "web",
 		phase: "building",
 		technologies: ["Astro", "Svelte", "TypeScript", "Tailwind CSS"],
-		icon: "material-symbols:deployed-code-outline-rounded",
-		cover: "/assets/projects/shirone.webp",
-		coverAlt: "Shirone theme homepage preview",
+		icon: "material-symbols:web-rounded",
 		featured: true,
-		repository: "https://github.com/LyraVoid/Shirone",
+		website: "https://chi.qzz.io/",
+		repository: "https://github.com/tsai97216/tsai97216.github.io",
 		year: "2026",
 	},
 	{
-		key: "folkpatch",
-		title: "FolkPatch",
-		summary: "A kernel-level root solution for Android, built on APatch.",
-		category: "android",
+		key: "altstore-sources",
+		title: "AltStore Sources",
+		summary:
+			"自己維護的 AltStore Source，整理與提供個人使用的 App 資源資訊。",
+		category: "web",
 		phase: "building",
-		technologies: ["Kotlin", "APatch", "Android"],
-		icon: "material-symbols:terminal-rounded",
-		repository: "https://github.com/LyraVoid/FolkPatch",
+		technologies: ["JSON", "Cloudflare Workers", "GitHub"],
+		icon: "material-symbols:apps-rounded",
+		website: "https://altstore.chi.qzz.io/",
+		repository: "https://github.com/tsai97216/Altstore-Sources",
+		year: "2026",
 	},
 	{
-		key: "kernelpatch",
-		title: "KernelPatch",
+		key: "chi-merch",
+		title: "Chi Merch",
 		summary:
-			"A kernel patch framework that powers APatch-style root on Android by loading code into the running kernel.",
-		category: "android",
-		phase: "shipped",
-		technologies: ["C", "Linux Kernel", "Android"],
-		icon: "material-symbols:extension-outline-rounded",
-		repository: "https://github.com/lyravoid/KernelPatch",
+			"整理個人收藏與周邊資訊的網站，包含圖片、商品資料與相關資訊。",
+		category: "web",
+		phase: "building",
+		technologies: ["GitHub Pages", "Cloudflare", "R2"],
+		icon: "material-symbols:shopping-bag-outline-rounded",
+		website: "https://merch.chi.qzz.io/",
+		repository: "https://github.com/tsai97216/merch",
+		year: "2026",
+	},
+	{
+		key: "free-games-claimer",
+		title: "Free Games Claimer",
+		summary:
+			"部署在 VPS 上的免費遊戲領取自動化服務，集中管理與執行遊戲平台任務。",
+		category: "infrastructure",
+		phase: "building",
+		technologies: ["Docker", "Docker Compose", "Ubuntu", "Cloudflare Tunnel"],
+		icon: "material-symbols:cloud-sync-rounded",
+		featured: true,
+		year: "2026",
 	},
 ];
 
-/** 获取所有项目数据列表 */
 export function getProjectsList(): ProjectItem[] {
 	return projectsData;
 }
