@@ -1,26 +1,24 @@
-# About Shirone
+# About 齊
 
-Welcome to the demo site of **Shirone** (白音) — an expressive, anime-inspired blog theme built on the **Material 3 Expressive (M3E)** design system.
+這裡是 **齊（Chi）** 的個人網站。
 
-::github{repo="LyraVoid/Shirone"}
+我喜歡把正在做的事情慢慢留下來：網站、程式、遊戲、裝置，以及一些還沒整理成答案的想法。這個網站也是其中的一部分，與其追求一次完成，我更想讓它隨著時間持續長出新的內容。
 
-## ✦ Design & Philosophy
+## ✦ 現在
 
-Shirone aims to combine the warmth of expressive anime aesthetics with the rigor of modern web engineering:
+目前主要在準備下一次學測，也持續維護自己的網站與幾個小型網路專案。
 
-- **Dynamic Chromatic Spell**: Full dynamic HCT palette generation responding seamlessly to light/dark modes and user preferences with zero layout shifts.
-- **Seamless Shell Navigation**: Persistent application shell driven by Swup for continuous music playback, smooth page transitions, and preserved state.
-- **Rich Story Grimoire**: Markdown and MDX authoring with KaTeX math, Mermaid diagrams, interactive admonitions, expressive code blocks, and adaptive image galleries.
-- **Zero Extra Burden**: Optional integrations (comments, analytics, music widgets) load dynamically on demand — zero DOM footprint and zero bundle overhead when disabled.
+平常會摸 Astro、TypeScript、Cloudflare、GitHub，以及各種讓生活變得方便一點的小工具。偶爾也會玩《崩壞：星穹鐵道》和《絕區零》。
 
-## ✦ Tech Stack
+## ✦ 這個網站
 
-- **Framework**: [Astro 7](https://astro.build/) & [Svelte 5](https://svelte.dev/) (Runes-driven islands)
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) & [Stylus](https://stylus-lang.com/)
-- **Design Standard**: [Material 3 Expressive](https://m3.material.io/)
-- **Typography**: Outfit & Yozai (悠哉圆体) with automated build-time subsetting
-- **Search Engine**: [Pagefind](https://pagefind.app/) offline full-text search
+這個網站使用 **Astro 7**、**Svelte 5**、**TypeScript** 與 **Tailwind CSS 4** 建置，介面以 Material 3 Expressive 為基礎。
 
-## ✦ Credits
+網站保留了原本主題提供的文章、時間線、作品、裝置、遊戲、技能、相簿、瞬間等功能。空白的地方就先留著，等真的有值得留下的內容再填進去。
 
-- **Font**: [Yozai Font (悠哉字体)](https://github.com/lxgw/yozai-font) by [lxgw](https://github.com/lxgw)
+## ✦ 關於我
+
+我比較習慣安靜地觀察、研究，再自己動手試。
+
+比起把所有事情一次規劃完，我更喜歡先讓東西跑起來，再一點一點修成自己想要的樣子。這個網站大概也是這種性格的產物。
+
