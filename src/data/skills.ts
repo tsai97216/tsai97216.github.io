@@ -1,161 +1,82 @@
 /**
- * 技能页数据源（纯内容）。
- * 页面展示与筛选规则由 src/config/skillsConfig.ts 控制。
+ * 技能頁資料來源（純內容）。
+ * 頁面展示與篩選規則由 src/config/skillsConfig.ts 控制。
  */
 import type { SkillItem } from "@/types/skillsConfig";
 
 export const skillsData: SkillItem[] = [
 	{
-		name: "JavaScript",
-		description:
-			"ES2020+ syntax, async plumbing, and event-driven browser code.",
-		icon: "simple-icons:javascript",
-		category: "frontend",
-		level: "advanced",
-	},
-	{
-		name: "TypeScript",
-		description: "Typed application code and maintainable contracts.",
-		icon: "simple-icons:typescript",
-		category: "frontend",
-		level: "expert",
-	},
-	{
 		name: "Astro",
-		description: "Content-focused sites with fast server-rendered output.",
+		description: "用於個人網站與內容型網站的建置與維護。",
 		icon: "simple-icons:astro",
 		category: "frontend",
 		level: "advanced",
 	},
 	{
 		name: "Svelte",
-		description: "Focused interactive islands and component systems.",
+		description: "用於網站中的互動元件與介面功能。",
 		icon: "simple-icons:svelte",
 		category: "frontend",
 		level: "advanced",
 	},
 	{
-		name: "React",
-		description: "Composable component trees with hooks and client state.",
-		icon: "simple-icons:react",
+		name: "TypeScript",
+		description: "用於網站程式碼、設定與資料結構。",
+		icon: "simple-icons:typescript",
 		category: "frontend",
-		level: "intermediate",
-	},
-	{
-		name: "Vue",
-		description: "Progressive component authoring for rapid single-page apps.",
-		icon: "simple-icons:vuedotjs",
-		category: "frontend",
-		level: "intermediate",
+		level: "advanced",
 	},
 	{
 		name: "Tailwind CSS",
-		description: "Utility-first styling for rapidly composed interfaces.",
+		description: "用於網站介面與樣式系統。",
 		icon: "simple-icons:tailwindcss",
-		category: "frontend",
-		level: "advanced",
-	},
-	{
-		name: "Sass",
-		description: "Nesting, variables, and mixins for maintainable stylesheets.",
-		icon: "simple-icons:sass",
 		category: "frontend",
 		level: "intermediate",
 	},
 	{
-		name: "Node.js",
-		description: "Build tooling, services, and content pipelines.",
-		icon: "simple-icons:nodedotjs",
-		category: "backend",
+		name: "GitHub",
+		description: "用於原始碼管理、網站部署與個人專案維護。",
+		icon: "simple-icons:github",
+		category: "tooling",
 		level: "advanced",
 	},
 	{
+		name: "Docker",
+		description: "用於 VPS 上的服務部署與容器管理。",
+		icon: "simple-icons:docker",
+		category: "backend",
+		level: "intermediate",
+	},
+	{
+		name: "Docker Compose",
+		description: "用於管理多容器服務與部署設定。",
+		icon: "simple-icons:docker",
+		category: "backend",
+		level: "intermediate",
+	},
+	{
+		name: "Ubuntu",
+		description: "用於 VPS 環境、服務部署與伺服器管理。",
+		icon: "simple-icons:ubuntu",
+		category: "backend",
+		level: "intermediate",
+	},
+	{
+		name: "Cloudflare",
+		description: "用於網域、DNS、Pages、R2 與 Tunnel 等網站基礎服務。",
+		icon: "simple-icons:cloudflare",
+		category: "tooling",
+		level: "intermediate",
+	},
+	{
 		name: "Python",
-		description: "Scripting, data wrangling, and service automation.",
+		description: "用於腳本、工具與自動化相關工作。",
 		icon: "simple-icons:python",
 		category: "backend",
 		level: "intermediate",
 	},
-	{
-		name: "Java",
-		description: "Typed OO code for larger service and tooling layers.",
-		icon: "simple-icons:openjdk",
-		category: "backend",
-		level: "intermediate",
-	},
-	{
-		name: "Go",
-		description: "Concurrent services and small high-performance tools.",
-		icon: "simple-icons:go",
-		category: "backend",
-		level: "beginner",
-	},
-	{
-		name: "Rust",
-		description: "Memory-safe systems code and performance-critical paths.",
-		icon: "simple-icons:rust",
-		category: "backend",
-		level: "beginner",
-	},
-	{
-		name: "C++",
-		description: "Native modules and performance-sensitive components.",
-		icon: "simple-icons:cplusplus",
-		category: "backend",
-		level: "beginner",
-	},
-	{
-		name: "C",
-		description: "Low-level systems work close to the runtime.",
-		icon: "simple-icons:c",
-		category: "backend",
-		level: "beginner",
-	},
-	{
-		name: "Kotlin",
-		description: "Concise JVM/Android code with modern null safety.",
-		icon: "simple-icons:kotlin",
-		category: "backend",
-		level: "beginner",
-	},
-	{
-		name: "Swift",
-		description: "Native Apple-platform code and small CLIs.",
-		icon: "simple-icons:swift",
-		category: "backend",
-		level: "beginner",
-	},
-	{
-		name: "Ruby",
-		description: "Readable scripting and quick automation.",
-		icon: "simple-icons:ruby",
-		category: "backend",
-		level: "beginner",
-	},
-	{
-		name: "PHP",
-		description: "Server-rendered web code and content platforms.",
-		icon: "simple-icons:php",
-		category: "backend",
-		level: "beginner",
-	},
-	{
-		name: "PostgreSQL",
-		description: "Relational data modeling and application queries.",
-		icon: "simple-icons:postgresql",
-		category: "backend",
-		level: "intermediate",
-	},
-	{
-		name: "Playwright",
-		description: "User-facing regression and accessibility testing.",
-		icon: "simple-icons:playwright",
-		category: "tooling",
-		level: "advanced",
-	},
 ];
 
-/** 获取所有技能数据列表 */
 export function getSkillsList(): SkillItem[] {
 	return skillsData;
 }
