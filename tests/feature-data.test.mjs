@@ -30,7 +30,12 @@ describe("Feature Data & Resolver Tests", () => {
 			categories: [],
 			disabledKeys: ["folkpatch"],
 		};
-		const resolved = resolveProjectsData(config);
+		const customItems = [
+			{ key: "shirone", title: "Shirone" },
+			{ key: "folkpatch", title: "FolkPatch" },
+			{ key: "kernelpatch", title: "KernelPatch" },
+		];
+		const resolved = resolveProjectsData(config, customItems);
 		assert.ok(resolved.some((p) => p.key === "shirone"));
 		assert.ok(resolved.some((p) => p.key === "kernelpatch"));
 		assert.ok(!resolved.some((p) => p.key === "folkpatch"));
@@ -86,7 +91,11 @@ describe("Feature Data & Resolver Tests", () => {
 			categories: [],
 			disabledIds: ["iphone-16-pro"],
 		};
-		const resolved = resolveDevicesData(config);
+		const customItems = [
+			{ id: "macbook-pro-16", name: "MacBook Pro 16" },
+			{ id: "iphone-16-pro", name: "iPhone 16 Pro" },
+		];
+		const resolved = resolveDevicesData(config, customItems);
 		assert.ok(resolved.some((d) => d.id === "macbook-pro-16"));
 		assert.ok(!resolved.some((d) => d.id === "iphone-16-pro"));
 	});
