@@ -1,50 +1,36 @@
 ---
-title: Content Annotations
-published: 2026-08-27
-description: Add compact, accessible supporting notes to Shirone articles without interrupting the reading flow.
-tags: [Demo, Markdown, Annotation, Shirone]
-category: Guides
-lang: en
+title: "沒有內容的頁面，也可以先留著"
+published: 2026-09-27
+description: "關於網站裡那些目前空白，但未來可能會有東西的地方。"
+tags: [網站, 設計, 隨筆]
+category: 隨筆
 draft: false
 ---
 
-Content annotations keep supporting context close to a sentence without placing it directly in the reading flow. Activate the small note marker to reveal its content.
+做個人網站很容易遇到一個問題：
 
-## Basic syntax
+「這個頁面現在沒有東西，那是不是應該刪掉？」
 
-Add a `[+label]` reference in ordinary prose, then define the matching note elsewhere in the same article.
+我的答案現在比較偏向不要。
 
-```markdown
-Astro renders most of a page ahead of time and hydrates **interactive islands** [+islands] only when they need to become interactive.
+因為「目前沒有內容」和「這個功能沒有價值」是完全不同的事情。
 
-[+islands]:
-  An island is an interactive UI component surrounded by static HTML. This keeps the default page lightweight while preserving focused interactivity.
-```
+像相簿、朋友、動畫、瞬間這些頁面，現在可能沒有足夠的東西可以填滿。但它們仍然代表一種可能性。
 
-Astro renders most of a page ahead of time and hydrates **interactive islands** [+islands] only when they need to become interactive.
+也許之後某一天突然想整理照片。
 
-[+islands]:
-  An island is an interactive UI component surrounded by static HTML. This keeps the default page lightweight while preserving focused interactivity.
+也許有值得留下來的人或事情。
 
-## Rich content
+也許只是突然覺得某個瞬間值得記錄。
 
-Definitions may contain paragraphs, emphasis, links, lists, and inline code [+rich-note] while the surrounding sentence continues normally.
+那時候頁面已經在那裡了。
 
-[+rich-note]:
-  **Authoring guidance**
+## 留白也是狀態
 
-  - Keep the first sentence self-contained.
-  - Use a link when readers may need the primary source.
-  - Prefer concise examples such as `client:visible`.
+我不太想為了讓網站看起來很滿，就製造一些不存在的內容。
 
-  See the [Astro islands documentation](https://docs.astro.build/en/concepts/islands/) for the full model.
+所以目前空白就空白。
 
-## Multiple definitions
+網站不需要每天都有更新，也不需要每個角落都塞滿文字。
 
-Reuse a label [+review] to present a short sequence of related notes behind one marker.
-
-[+review]: Start with the decision that changes the reader's next action.
-[+review]: Keep implementation evidence separate from background context.
-[+review]: Remove details that belong in the main article instead of the annotation.
-
-Undefined references such as `[+missing]` remain ordinary text, so an unfinished definition never creates an empty control.
+它可以像一間還在慢慢整理的房間。
