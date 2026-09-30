@@ -1,40 +1,40 @@
 ---
-title: Markdown Marker Highlights
-published: 2026-08-28
-description: Highlight key phrases with token-driven marker syntax in Shirone Markdown.
-tags: [Demo, Markdown, Typography, Shirone]
-category: Guides
-lang: en
+title: "我喜歡怎麼整理東西"
+published: 2026-09-18
+description: "從網站到筆記，我越來越在意的是能不能快速找到真正需要的東西。"
+tags: [整理, 工具, 隨筆]
+category: 隨筆
 draft: false
 ---
 
-Marker highlights bring attention to a specific phrase without turning the surrounding paragraph into a separate component. They render as native `<mark>` elements during the build and inherit the active M3E color system.
+我不太喜歡把東西整理得很漂亮，卻在真正需要的時候找不到。
 
-## Default emphasis
+所以我比較在意的是另一件事：**下一次還能不能快速看懂。**
 
-Use `==text==` when the article's primary color should carry the emphasis. This is useful for ==one decision that readers should retain== while they continue through an ordinary paragraph.
+## 少一點，但清楚一點
 
-The marker may contain ==nested **Markdown emphasis**== when the phrase needs a stronger hierarchy.
+一個資料夾裡放十個看起來差不多的檔案，通常比只留下三個真正有用途的檔案更難維護。
 
-## Semantic colors
+網站也是一樣。
 
-Use a suffix when the meaning needs a different tonal role. The available variants are `primary`, `secondary`, `tertiary`, `error`, and `tip`.
+不是每個功能都一定要刪掉，但每個留下來的東西最好都有理由。
 
-- ==Primary connects the phrase to the active theme=={.primary}
-- ==Secondary keeps a supporting distinction quiet=={.secondary}
-- ==Tertiary adds a separate editorial signal=={.tertiary}
-- ==Error identifies a condition that needs correction=={.error}
-- ==Tip highlights practical guidance=={.tip}
+## 我會留下什麼？
 
-## Author syntax
+通常是三種：
 
-```markdown
-==Primary marker==
+- 之後真的可能會用到的東西
+- 已經穩定運作的東西
+- 即使現在沒內容，也代表網站結構的一部分
 
-==Secondary marker=={.secondary}
-==Tertiary marker=={.tertiary}
-==Error marker=={.error}
-==Tip marker=={.tip}
-```
+剩下的才需要考慮整理。
 
-Inline code such as `==literal marker syntax==` and fenced examples stay literal, so documentation can explain the syntax without triggering it.
+## 整理其實是在降低未來的成本
+
+今天多花五分鐘把命名弄清楚，可能就能省掉未來半小時的搜尋。
+
+所以我現在做網站時，會慢慢把資料、頁面、專案和設定整理成自己看得懂的樣子。
+
+不用一次完成。
+
+只要每次回來，都比上一次更容易理解一點。
