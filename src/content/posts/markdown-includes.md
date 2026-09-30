@@ -1,23 +1,38 @@
 ---
-title: "Markdown File Includes"
-published: 2026-08-28
-description: "Build-time Markdown file and slice includes."
-tags: [Markdown, Shirone]
-category: Guides
+title: "我的網站部署流程"
+published: 2026-09-22
+description: "從 GitHub 到自己的網域，中間其實沒有想像中複雜。"
+tags: [GitHub, Cloudflare, 部署]
+category: 開發
 draft: false
 ---
 
-Shirone can include a local Markdown file or a safe slice of one.
+現在這個網站的核心流程很簡單：
 
-<!-- @include: src/content/snippets/include-example.md#public-api -->
+**修改 → Commit → Push → 建置 → 部署。**
 
-The full file and line-range forms are also supported:
+程式碼放在 GitHub。
 
-```markdown
-<!-- @include: src/content/snippets/include-example.md -->
-<!-- @include: src/content/snippets/include-example.md{1-4} -->
-<!-- @include: src/content/snippets/include-example.md{5-} -->
-<!-- @include: src/content/snippets/include-example.md{-4} -->
-```
+網站用 Astro 建置。
 
-Include comments inside fenced code remain literal.
+最後部署到 GitHub Pages，再透過自己的網域提供服務。
+
+## 網域
+
+我使用自己的網域 chi.qzz.io。
+
+這件事一開始其實比想像中容易卡住，尤其是 DNS 和 GitHub Pages 的設定。
+
+最麻煩的通常不是輸入一個網址，而是等每個地方的設定真的同步起來。
+
+## 為什麼喜歡這種流程？
+
+因為網站不需要一台一直開著的電腦。
+
+只要程式碼更新，後面的流程就可以自己跑。
+
+對一個主要拿來留下東西的個人網站來說，這樣剛剛好。
+
+不用每天照顧它。
+
+有東西想留下來的時候，再回來更新。
