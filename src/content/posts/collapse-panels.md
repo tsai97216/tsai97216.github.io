@@ -1,70 +1,40 @@
 ---
-title: Markdown Collapse Panels
-published: 2026-08-28
-description: Group optional Markdown content into compact, accessible M3E disclosure panels.
-tags: [Demo, Markdown, Collapse, Shirone]
-category: Guides
-lang: en
+title: "我的網站工具箱"
+published: 2026-09-28
+description: "平常會碰到的一些網站、開發與整理工具。"
+tags: [工具, 開發, 網站]
+category: 開發
 draft: false
 ---
 
-Collapse panels keep related optional details in one compact group. Titles and bodies retain inline and block Markdown, while native disclosure semantics make every panel usable without client JavaScript.
+我很喜歡把常用的東西集中在一個地方。
 
-## Independent panels
+不是因為每個工具都很厲害，而是不用每次需要的時候重新找。
 
-Items open independently by default. Prefix a title with `:+` to open that item initially or `:-` to keep it closed when the group uses `expand`.
+目前比較常碰到的幾個東西，大概可以分成三類。
 
-::: collapse
-- **Package requirements**
+## 寫網站
 
-  Use Node.js 22 or newer and enable Corepack before installing packages.
+Astro 是目前這個網站的核心。
 
-- :+ Install dependencies
+它負責把內容、頁面和元件組織起來，再交給其他工具處理互動與樣式。
 
-  Run the workspace package command from the repository root.
+TypeScript 則是我在寫比較複雜的邏輯時會依賴的東西。型別有時候看起來很煩，但真的幫忙抓到錯誤時，又會覺得它其實滿有用的。
 
-  ```powershell
-  pnpm.cmd install
-  ```
+## 放網站
 
-- Validation commands
+GitHub 負責保存程式碼與版本。
 
-  Check the content pipeline before building the production output.
+Cloudflare 則處理網域、DNS 和一些網站周邊的事情。
 
-  - `pnpm.cmd check:manifest`
-  - `npx.cmd astro check`
-:::
+這幾個東西組在一起之後，從修改檔案到網站更新，整條流程就可以變得很順。
 
-## Accordion mode
+## 找資料
 
-Add `accordion` when only one answer should remain open. The browser groups the native disclosures directly, so opening another item closes the previous one without hydration.
+MDN 是遇到 Web API 問題時很常會看的地方。
 
-::: collapse accordion expand
-- What does `expand` do here?
+另外也會使用一些圖片、圖示和文字相關工具，讓做網站的過程少一點重複勞動。
 
-  It opens the first item initially when no item has a `:+` marker.
+工具不用很多。
 
-- Can a title contain Markdown?
-
-  Yes. Titles support inline **emphasis** and `code`, while panel bodies support full block Markdown.
-
-- What happens on a narrow screen?
-
-  Content padding becomes compact, long text wraps, and embedded code keeps its own horizontal scrolling area.
-:::
-
-## Author syntax
-
-````markdown
-::: collapse accordion
-- :+ First title
-
-  First panel content.
-
-- Second title with `code`
-
-  Second panel content.
-:::
-````
-
-The container must contain exactly one top-level unordered list. Every item needs a title paragraph, a blank line, and body content. Invalid or mixed input remains an ordinary readable Markdown list.
+夠順手就好。
