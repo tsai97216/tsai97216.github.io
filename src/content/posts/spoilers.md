@@ -1,25 +1,40 @@
 ---
-title: Markdown Spoilers
-published: 2026-08-28
-description: Hide inline answers while keeping spoiler content accessible in Shirone Markdown.
-tags: [Demo, Markdown, Accessibility, Shirone]
-category: Guides
-lang: en
+title: "為什麼我還是會留著遊戲"
+published: 2026-09-15
+description: "有些遊戲不一定天天玩，但留下來本身就是一種選擇。"
+tags: [遊戲, 隨筆, 娛樂]
+category: 隨筆
 draft: false
 ---
 
-Spoilers conceal a short answer or plot detail without removing it from the document. Hover, focus, or activate the native control to reveal the content.
+現在我玩的遊戲其實比以前少很多。
 
-## Inline details
+有些遊戲已經很久沒開，有些甚至暫時停在那裡。
 
-The answer is :spoiler[**42**], and this sentence remains ordinary Markdown around it.
+但我不太喜歡因為「最近沒玩」就立刻刪掉。
 
-Spoilers can include `inline code` and :spoiler[a longer detail with **emphasis**].
+## 遊戲不是待辦事項
 
-## Author syntax
+它不像作業一樣，沒有完成期限。
 
-```markdown
-The answer is :spoiler[42].
-```
+今天沒玩，不代表它就失去意義。
 
-The generated HTML uses a native button with an `aria-expanded` state. Without JavaScript, hover and focus still reveal the text; the optional runtime adds click and keyboard toggling.
+有時候只是現在沒有心情，或者有其他事情比較重要。
+
+## 留著，也是一種整理
+
+我現在比較傾向留下真正還有興趣的遊戲，其他的就慢慢減少。
+
+這樣打開遊戲庫時，不會看到一大片自己其實已經不想碰的東西。
+
+## 偶爾回去看看
+
+過一陣子再打開以前玩過的遊戲，感覺其實很奇妙。
+
+有些東西會發現自己已經沒興趣了。
+
+也有些角色、音樂或場景，隔了一段時間還是會讓人記得。
+
+所以我現在不太追求「每個遊戲都要玩完」。
+
+有些東西陪過一段時間，就已經足夠。
