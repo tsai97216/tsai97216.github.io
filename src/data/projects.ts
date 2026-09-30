@@ -4,8 +4,7 @@ export const projectsData: ProjectItem[] = [
 	{
 		key: "chi-personal-site",
 		title: "Chi 個人網站",
-		summary:
-			"正在打造的個人網站，整理自己的作品、設備、遊戲、時間軸與日常紀錄。",
+		summary: "個人網站。",
 		category: "web",
 		phase: "building",
 		technologies: ["Astro", "Svelte", "TypeScript", "Tailwind CSS"],
@@ -18,8 +17,7 @@ export const projectsData: ProjectItem[] = [
 	{
 		key: "altstore-sources",
 		title: "AltStore Sources",
-		summary:
-			"自己維護的 AltStore Source，整理與提供個人使用的 App 資源資訊。",
+		summary: "自己的 AltStore Source。",
 		category: "web",
 		phase: "building",
 		technologies: ["JSON", "Cloudflare Workers", "GitHub"],
@@ -31,8 +29,7 @@ export const projectsData: ProjectItem[] = [
 	{
 		key: "chi-merch",
 		title: "Chi Merch",
-		summary:
-			"整理個人收藏與周邊資訊的網站，包含圖片、商品資料與相關資訊。",
+		summary: "收藏與周邊整理網站。",
 		category: "web",
 		phase: "building",
 		technologies: ["GitHub Pages", "Cloudflare", "R2"],
@@ -44,8 +41,7 @@ export const projectsData: ProjectItem[] = [
 	{
 		key: "nav",
 		title: "Nav",
-		summary:
-			"自己的網站導航，整理常用網站、工具與服務。",
+		summary: "自己的網站導航。",
 		category: "web",
 		phase: "building",
 		technologies: ["Web", "Cloudflare"],
