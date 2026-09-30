@@ -1,70 +1,28 @@
 ---
-title: Markdown Admonitions
-published: 2026-08-27
-description: Present notes, warnings, and optional details with Shirone's M3E Markdown containers.
-tags: [Demo, Markdown, Admonition, Shirone]
-category: Guides
-lang: en
+title: "把網站慢慢做成自己的樣子"
+published: 2026-09-30
+description: "從一個主題開始，把模板逐步整理成真正屬於 Chi 的網站。"
+tags: [網站, Astro, Chi]
+category: 網站
 draft: false
 ---
 
-Admonitions keep supporting information visually distinct while preserving the article's reading flow. Every form is rendered on the server and uses the same compact M3E component.
+一開始接手一個現成主題，最容易做的事情其實不是設計，而是把名字換掉。
 
-## Semantic variants
+但名字換掉之後，網站還是原本的網站。
 
-::: note Deployment context
-The spaced form accepts a plain custom title while remaining compatible with the reference syntax.
-:::
+所以我開始一點一點看它的結構：哪些頁面真的有用、哪些資料只是範例、哪些功能值得留下。這個過程不像重新蓋一棟房子，比較像搬進一間已經裝潢好的房間，再慢慢把家具換成自己的。
 
-:::info
-Use information blocks for neutral context that helps readers understand the surrounding section.
-:::
+目前這個網站仍然保留很多原本的能力。文章、時間線、遊戲、裝置、相簿、瞬間和其他頁面都沒有因為暫時沒有內容而消失。
 
-:::tip[Existing **label** syntax]
-The original bracket label remains available and can contain inline Markdown emphasis.
-:::
+我比較喜歡這種狀態。
 
-> [!IMPORTANT]
-> GitHub Alert syntax enters the same renderer, so existing articles keep one visual language.
+空白的地方可以慢慢長東西，而不是為了看起來完整，硬塞一些其實不屬於自己的內容。
 
-:::warning
-Check environment variables before running a production build.
-:::
+## 現在的方向
 
-:::caution
-Do not publish credentials, local configuration, or private keys with an example.
-:::
+我想讓這裡最後變成一個很簡單的地方：
 
-## Optional details
+> 我正在做什麼，就留下什麼。
 
-::: details Inspect the complete command
-The disclosure uses native browser semantics and remains keyboard accessible without client JavaScript.
-
-```powershell
-npx.cmd astro check
-pnpm.cmd build
-```
-
-- It starts closed.
-- Long code can scroll inside its own code block.
-- The container remains within the article width on narrow screens.
-:::
-
-## Author syntax
-
-```markdown
-:::note[Existing title syntax]
-Content
-:::
-
-::: warning Plume-compatible title syntax
-Content
-:::
-
-> [!TIP]
-> GitHub Alert syntax
-
-::: details Optional content
-Hidden until the reader opens it.
-:::
-```
+不一定每篇都是正式文章，也不一定每次都要有結論。只要過了一段時間回頭看，還能知道自己曾經走過哪裡，就夠了。
