@@ -1,37 +1,38 @@
 ---
-title: Markdown Abbreviations
-published: 2026-08-28
-description: Define common acronyms once and keep their full meaning available in normal article text.
-tags: [Demo, Markdown, Typography, Shirone]
-category: Guides
-lang: en
+title: "一個網站最難改的，通常不是程式碼"
+published: 2026-09-25
+description: "真正需要花時間的，是決定什麼該留下來。"
+tags: [網站, 設計, 隨筆]
+category: 隨筆
 draft: false
 ---
 
-Abbreviations keep technical writing compact while preserving the full term for readers who need it. A defined term renders as a native `abbr` element with its meaning available on hover and to assistive technology.
+程式碼可以改。
 
-## In context
+顏色可以改。
 
-SSR-first output keeps the initial document visible before JavaScript runs. When measuring its reading experience, LCP and CLS reveal whether the first visible content is fast and stable.
+字體可以改。
 
-An abbreviation can also appear next to ordinary Markdown such as **SSR** guidance, but literal code such as `SSR` and links like [LCP documentation](https://web.dev/articles/lcp) remain untouched.
+甚至整個頁面都可以重寫。
 
-## Define terms
+但「這個東西到底要不要存在」反而比較難回答。
 
-Place definitions anywhere in the same Markdown document. They do not render as visible paragraphs, and only matching terms in that article receive the semantic abbreviation treatment.
+做個人網站尤其明顯。
 
-```markdown
-*[SSR]: Server-Side Rendering
-*[LCP]: Largest Contentful Paint
-*[CLS]: Cumulative Layout Shift
+因為模板通常會提供很多功能。文章、標籤、分類、朋友、動畫、音樂、相簿、時間線，全部看起來很完整。
 
-SSR makes an HTML response available before client code runs.
-```
+可是自己的生活不一定真的需要這麼多東西。
 
-*[SSR]: Server-Side Rendering
-*[LCP]: Largest Contentful Paint
-*[CLS]: Cumulative Layout Shift
+## 所以我現在不急著刪
 
-## Authoring boundaries
+如果某個功能只是因為模板原本有，我不一定會刪掉。
 
-Terms must begin with a letter or number and may contain letters, numbers, periods, underscores, plus signs, and hyphens. Each definition applies to the current article only; an invalid or duplicate definition remains ordinary Markdown instead of silently replacing another term.
+先看看它到底做什麼。
+
+如果有價值，就留下。
+
+如果現在沒有內容，也可以先放著。
+
+網站可以同時存在「現在的我」和「未來可能會變成的我」。
+
+這大概也是我希望這個網站慢慢變成的樣子。
