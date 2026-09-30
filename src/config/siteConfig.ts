@@ -71,13 +71,7 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 			// 仅在首页 Banner 中显示，标题与副标题会上下居中排列。
 			enable: true,
 			title: "Chi",
-			subtitle: [
-				"把正在發生的事，慢慢留下來",
-				"有些路不用急著走完，先記住現在的位置",
-				"在藍色的夜裡，整理今天留下來的訊號",
-				"世界很大，先把自己的小角落做好",
-				"今天也沒有什麼特別的事，但值得留下來",
-			],
+			subtitle: ["不知道要寫什麼"],
 			typewriter: {
 				// 副标题逐字显示；关闭后直接显示完整副标题。
 				enable: true,
