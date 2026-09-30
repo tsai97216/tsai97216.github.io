@@ -1,185 +1,45 @@
 ---
-title: Shirone Markdown Enhancements
-published: 2026-08-19
+title: "Chi 這個名字從哪裡來"
+published: 2026-09-24
+description: "網站名稱、暱稱，以及為什麼最後選了 Chi。"
+tags: [Chi, 網站, 個人]
+category: 隨筆
 pinned: true
-description: Explore Shirone's custom Markdown extensions, expressive components, and authoring syntax.
-tags: [Demo, Markdown, Extensions, Theme, Shirone]
-series: markdown-syntax-guide
-seriesOrder: 3
-category: Guides
-lang: en
 draft: false
 ---
 
-Shirone provides a collection of theme-exclusive Markdown extensions and custom syntax containers. Built on top of our native unified AST processing pipeline, all extensions render into accessible, semantic HTML during site build time with **zero client JavaScript hydration overhead** and **100% M3E design token alignment**.
+這個網站對外使用 **Chi**。
 
-## File Trees
+中文則會使用 **齊**。
 
-File Trees turn multi-level project structures, source hierarchies, and terminal directory outputs into compact, interactive tree views with automatic extension icons, diff highlighting, and collapsible branches.
+這兩個名字沒有什麼複雜的設定，就是希望網站上看到的身份簡單一點。
 
-### 1. Nested List Syntax (`:::file-tree`)
+GitHub 帳號是 GitHub 帳號。
 
-Use the `:::file-tree` block directive when writing the file hierarchy directly as a Markdown nested list.
+網站則是網站。
 
-```markdown
-:::file-tree{title="Shirone source tree"}
-- src
-  - components/
-    - ++ Navigation.svelte # added component
-    - -- Button.astro # removed component
-  - content
-    - posts/
-      - markdown-enhancements.md
-  - layouts/
-    - PostLayout.astro
-  - plugins
-    - markdown/
-      - rehype-file-tree.mjs
-  - styles
-    - markdown/
-      - trees.css
-  - **content.config.ts** # important file
-- public/
-  - favicon.svg
-- package.json
-:::
-```
+所以我在網站裡沒有特別想把帳號名稱放得到處都是。
 
-:::file-tree{title="Shirone source tree"}
-- src
-  - components/
-    - ++ Navigation.svelte # added component
-    - -- Button.astro # removed component
-  - content
-    - posts/
-      - markdown-enhancements.md
-  - layouts/
-    - PostLayout.astro
-  - plugins
-    - markdown/
-      - rehype-file-tree.mjs
-  - styles
-    - markdown/
-      - trees.css
-  - **content.config.ts** # important file
-- public/
-  - favicon.svg
-- package.json
-:::
+## 為什麼是 Chi？
 
-#### Authoring Rules & Markers
+Chi 很短。
 
-- **Diff States**: Prefix an item with `++` (green background & badge) or `--` (red background & strikethrough) to highlight changes.
-- **Comments**: Any text following a `#` is rendered as a muted, right-aligned inline comment.
-- **Emphasis**: Wrap names in `**bold**` to give key files prominent visual weight.
-- **Collapsible Folders**: Directories inferred from nested list items start expanded by default. Add a trailing slash (e.g. `components/`) to create a collapsed directory that readers can expand on click or via keyboard navigation.
+網址也短。
 
----
+放在標題、頁尾、瀏覽器分頁上都不會太擁擠。
 
-### 2. Terminal Output Syntax (```` ```file-tree ````)
+而且看起來不像一個需要解釋很久的品牌名稱。
 
-When you already have directory tree text generated from command-line tools like `tree`, paste it directly into a `file-tree` fenced code block. Both Unicode branch characters (`├──`, `└──`, `│`) and ASCII branches are automatically parsed.
+我比較喜歡這種感覺。
 
-````markdown
-```file-tree title="Build output" icon="simple"
-dist
-├── _astro/
-│   ├── index.css
-│   └── page.js
-└── favicon.ico
-```
-````
+不用很用力介紹自己。
 
-```file-tree title="Build output" icon="simple"
-dist
-├── _astro/
-│   ├── index.css
-│   └── page.js
-└── favicon.ico
-```
+看到 Chi，就知道這裡是我的小角落。
 
-#### Configuration Options
+## 這個網站也是一種簽名
 
-- `title="string"`: Sets a custom header title and accessible label for the tree.
-- `icon="colored" | "simple"`: Choose between multi-color extension icons (`colored`, default) or minimal monochrome icons (`simple`).
+沒有很正式。
 
----
+只是把名字放在自己做的東西旁邊。
 
-## Code Trees
-
-Interactive Code Trees pair a multi-level file hierarchy navigation pane on the left with instant code panel switching on the right. They provide an IDE-like reading experience for multi-file examples, modules, or whole directory walk-throughs.
-
-### 1. Container Syntax (`:::code-tree`)
-
-Combine multiple fenced code blocks within a `:::code-tree` block directive. Each code block specifies its path via `title="path/to/file"`.
-
-````markdown
-:::code-tree{title="Shirone Component Demo" height="380px" entry="src/Button.svelte"}
-```svelte title="src/Button.svelte"
-<script lang="ts">
-  let { label = "Click me" } = $props();
-</script>
-
-<button class="m3-btn">{label}</button>
-```
-
-```stylus title="src/styles/button.styl"
-.m3-btn
-  background: var(--primary)
-  color: var(--on-primary)
-  border-radius: var(--shape-corner-m)
-```
-
-```json title="package.json"
-{
-  "name": "button-demo",
-  "version": "1.0.0"
-}
-```
-:::
-````
-
-:::code-tree{title="Shirone Component Demo" height="380px" entry="src/Button.svelte"}
-```svelte title="src/Button.svelte"
-<script lang="ts">
-  let { label = "Click me" } = $props();
-</script>
-
-<button class="m3-btn">{label}</button>
-```
-
-```stylus title="src/styles/button.styl"
-.m3-btn
-  background: var(--primary)
-  color: var(--on-primary)
-  border-radius: var(--shape-corner-m)
-```
-
-```json title="package.json"
-{
-  "name": "button-demo",
-  "version": "1.0.0"
-}
-```
-:::
-
-#### Configuration & Markers
-
-- `title="string"`: Sets the header title and accessible label for the code tree.
-- `height="string"`: Sets the height for the desktop view (default `420px`, e.g. `380px`, `26rem`).
-- `entry="filepath"`: Specifies which file is active upon first load.
-- `icon="colored" | "simple"`: Switch between colorful or minimal monochrome file icons.
-- `:active`: Place `:active` on any fenced code block to designate it as the default active tab.
-
----
-
-### 2. Local Directory Auto-Import (`@[code-tree]`)
-
-Point directly to any local directory path in the workspace to automatically scan and generate an interactive code tree at build time without manually copying file contents.
-
-```markdown
-@[code-tree title="Anime Utilities" entry="status.ts"](/src/utils/anime)
-```
-
-@[code-tree title="Site Configuration" entry="siteConfig.ts"](/src/config)
-
+然後繼續做下一件事。
