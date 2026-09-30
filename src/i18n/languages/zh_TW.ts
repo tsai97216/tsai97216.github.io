@@ -14,20 +14,20 @@ export const zh_TW: Translation = {
 
 	[Key.friends]: "友鏈",
 	[Key.friendsNoResults]: "沒有符合條件的友鏈",
-	[Key.friendsBanner]: "如要交換友鏈，請見「關於」頁。",
+	[Key.friendsBanner]: "不知道要寫什麼",
 	[Key.friendsCount]: "個友鏈",
 	[Key.friendsCounts]: "個友鏈",
 
 	[Key.moments]: "動態",
 	[Key.momentsNoResults]: "沒有符合條件的動態",
-	[Key.momentsBanner]: "記錄一些日常。",
+	[Key.momentsBanner]: "不知道要寫什麼",
 	[Key.momentsCount]: "則動態",
 	[Key.momentsCounts]: "則動態",
 	[Key.pinned]: "置頂",
 	[Key.loadMore]: "載入更多",
 
 	[Key.anime]: "番劇",
-	[Key.animeBanner]: "我的動畫清單。",
+	[Key.animeBanner]: "不知道要寫什麼",
 	[Key.animeNoResults]: "沒有符合條件的番劇",
 	[Key.animeCounts]: "部番劇",
 	[Key.animeStatusWatching]: "在看",
@@ -45,12 +45,12 @@ export const zh_TW: Translation = {
 	[Key.animeSyncEmpty]: "目前資料來源中暫無動畫條目",
 
 	[Key.compass]: "工具箱",
-	[Key.compassBanner]: "常用工具與服務的快速入口。",
+	[Key.compassBanner]: "不知道要寫什麼",
 	[Key.compassNoResults]: "沒有符合條件的站點",
 	[Key.compassCounts]: "個站點",
 
 	[Key.skills]: "技能",
-	[Key.skillsBanner]: "使用的技術與工具。",
+	[Key.skillsBanner]: "不知道要寫什麼",
 	[Key.skillsCounts]: "項技能",
 	[Key.skillCategories]: "技能分類",
 	[Key.skillLevel]: "熟練度",
@@ -60,7 +60,7 @@ export const zh_TW: Translation = {
 	[Key.skillLevelExpert]: "精通",
 
 	[Key.projects]: "專案",
-	[Key.projectsBanner]: "我的專案。",
+	[Key.projectsBanner]: "不知道要寫什麼",
 	[Key.projectsCounts]: "個專案",
 	[Key.projectCategories]: "專案分類",
 	[Key.projectPhaseShipped]: "已發佈",
@@ -72,7 +72,7 @@ export const zh_TW: Translation = {
 	[Key.projectsNoResults]: "沒有符合此分類的專案",
 
 	[Key.devices]: "我的設備",
-	[Key.devicesBanner]: "平常使用的設備。",
+	[Key.devicesBanner]: "不知道要寫什麼",
 	[Key.devicesCounts]: "款設備",
 	[Key.devicesNoResults]: "沒有找到相符的設備",
 	[Key.devicesSearchPlaceholder]: "按名稱、品牌或規格搜尋...",
@@ -85,7 +85,7 @@ export const zh_TW: Translation = {
 	[Key.devicesFeatured]: "推薦",
 
 	[Key.games]: "遊戲",
-	[Key.gamesBanner]: "我玩的遊戲。",
+	[Key.gamesBanner]: "不知道要寫什麼",
 	[Key.gamesCounts]: "款遊戲",
 	[Key.gamesNoResults]: "沒有找到符合的遊戲",
 	[Key.gamesSearchPlaceholder]: "依名稱、開發商或類型搜尋...",
@@ -100,13 +100,13 @@ export const zh_TW: Translation = {
 	[Key.gamesRating]: "評分",
 
 	[Key.timeline]: "時間線",
-	[Key.timelineBanner]: "一些時間紀錄。",
+	[Key.timelineBanner]: "不知道要寫什麼",
 	[Key.timelineCounts]: "個節點",
 	[Key.timelineCategories]: "時間線分類",
 	[Key.timelineNoResults]: "沒有符合該分類的節點",
 
 	[Key.albums]: "相簿",
-	[Key.albumsBanner]: "照片與相簿。",
+	[Key.albumsBanner]: "不知道要寫什麼",
 	[Key.albumsNoResults]: "沒有符合條件的相簿",
 	[Key.albumsCounts]: "個相簿",
 	[Key.albumsBack]: "返回相簿",
