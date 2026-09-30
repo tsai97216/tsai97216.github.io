@@ -1,6 +1,5 @@
 /**
- * 设备展示页数据源（纯内容）。
- * 页面展示与筛选规则由 src/config/devicesConfig.ts 控制。
+ * 設備展示頁資料。
  */
 import type { DeviceItem } from "@/types/devicesConfig";
 
@@ -11,9 +10,8 @@ export const devicesData: DeviceItem[] = [
 		brand: "Apple",
 		category: "mobile",
 		status: "active",
-		specs: "256GB / ProMotion",
-		description:
-			"主要使用的手机，日常通讯、学习与各种移动工作都以它为中心。",
+		specs: "256GB",
+		description: "日常主要使用的手機。",
 		icon: "material-symbols:phone-iphone",
 		featured: true,
 	},
@@ -23,9 +21,8 @@ export const devicesData: DeviceItem[] = [
 		brand: "Apple",
 		category: "mobile",
 		status: "active",
-		specs: "64GB / 10.9-inch",
-		description:
-			"平板设备，主要用于阅读、学习，以及需要较大屏幕的移动使用场景。",
+		specs: "64GB / 10.9 吋",
+		description: "主要用於閱讀與學習。",
 		icon: "material-symbols:tablet-mac-rounded",
 		featured: true,
 	},
@@ -35,15 +32,13 @@ export const devicesData: DeviceItem[] = [
 		brand: "Acer",
 		category: "desk",
 		status: "active",
-		specs: "SF514-54-58VK / 无独立显卡",
-		description:
-			"主要的 Windows 笔记本，用于电脑端工作、网站开发与服务器管理。",
+		specs: "SF514-54-58VK",
+		description: "主要的 Windows 筆電。",
 		icon: "material-symbols:laptop-mac-rounded",
 		featured: true,
 	},
 ];
 
-/** 获取所有设备数据列表 */
 export function getDevicesList(): DeviceItem[] {
 	return devicesData;
 }
