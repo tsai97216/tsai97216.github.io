@@ -1,214 +1,57 @@
 ---
-title: "Shirone Authoring & Usage Guide"
-published: 2026-08-26
-updated: 2026-08-26
-pinned: true
-description: "A comprehensive guide to post authoring, frontmatter schema, Markdown extensions, encryption, and media in Shirone."
-image: "./cover.jpeg"
-tags: ["Shirone", "Guide", "Markdown", "M3E", "Blogging"]
-category: Guides
+title: "把一個主題慢慢變成自己的網站"
+published: 2026-09-12
+description: "從現成的主題開始，慢慢換掉名字、資料、文章和細節，最後留下自己的樣子。"
+tags: [網站, Astro, Shirone, Chi]
+category: 網站
 draft: false
+pinned: false
 ---
 
-Welcome to **Shirone** (白音) — an expressive, anime-inspired blog theme crafted around **Astro 7**, **Svelte 5**, and the **Material 3 Expressive (M3E)** design system.
+這個網站不是從一張白紙開始的。
 
-This guide walks you through post creation, frontmatter specifications, directory structure, and the full suite of built-in Markdown and MDX extensions.
+我一開始是從現成的主題出發，再一點一點把它改成比較像自己的地方。
 
-:::tip
-Shirone renders content server-side first (SSR-first). When navigating within the site, Swup seamlessly swaps the main container while preserving the outer application shell and continuous music playback.
-:::
+這個過程最有趣的地方，不是把所有東西重做，而是決定哪些東西值得留下。
 
----
+## 先理解，再修改
 
-## 1. Creating a New Post
+拿到一個已經很大的專案時，我不會第一時間亂改。
 
-You can quickly scaffold a new post with standard frontmatter using the built-in CLI command:
+先看資料夾。
 
-```bash
-# Create a single-file post
-pnpm new-post my-first-post
+再看設定。
 
-# Or create a post in a sub-directory
-pnpm new-post guides/getting-started
-```
+再看頁面怎麼組起來。
 
-The newly created file will be placed in `src/content/posts/`.
+知道東西在哪裡之後，才比較敢動手。
 
----
+## 把模板內容換掉
 
-## 2. Frontmatter Specification
+主題原本有很多 Demo。
 
-Every Markdown (`.md`) or MDX (`.mdx`) post starts with a YAML frontmatter block defining its metadata.
+它們很適合展示功能，但放在個人網站裡，就會顯得有點像展示間。
 
-### Example
+所以我開始把文章換成自己的內容。
 
-```yaml
----
-title: "Exploring Material 3 Expressive Design"
-published: 2026-08-26
-updated: 2026-08-27
-publishedAt: 2026-08-26T10:00:00+08:00
-updatedAt: 2026-08-27T09:30:00+08:00
-pinned: true
-description: "A deep dive into dynamic HCT color science and fluid transitions in Shirone."
-image: "./cover.webp"
-tags: [M3E, Design, Frontend]
-category: Guides
-draft: false
-comment: true
----
-```
+不是為了讓網站看起來「很多」，而是希望每一篇留下來都有一點自己的痕跡。
 
-### Supported Frontmatter Fields
+## 功能不一定要全部刪掉
 
-| Field | Type | Required | Description |
-| :--- | :--- | :---: | :--- |
-| `title` | `string` | **Yes** | The main title of the post. |
-| `published` | `Date` | **Yes** | Publication date in `YYYY-MM-DD` format. |
-| `publishedAt` | `Date` | No | Precise publication instant used to order posts published on the same day. It must fall on `published` in the configured site time zone. |
-| `updated` | `Date` | No | Last updated date. When provided, an update notice badge is displayed. |
-| `updatedAt` | `Date` | No | Precise update instant used by feeds and machine-readable metadata. It must be paired with `updated`. |
-| `pinned` | `boolean` | No | Pin the post to the top of article lists (default: `false`). |
-| `description` | `string` | No | Post summary displayed in article cards, search results, and OpenGraph metadata. |
-| `image` | `string` | No | Cover image path. Supports relative (`./cover.webp`), public (`/images/cover.jpg`), or remote URLs. |
-| `tags` | `string[]` | No | Array of tag names for taxonomy filtering and tag clouds. |
-| `category` | `string` | No | Primary category name for taxonomy indexing. |
-| `draft` | `boolean` | No | Mark as draft. Draft posts are hidden during production build (`pnpm build`). |
-| `comment` | `boolean` | No | Toggle comment section for this specific post (default: `true`). |
-| `lang` | `string` | No | Language code (e.g. `en`, `zh_CN`, `ja`) if different from site default. |
+有些頁面現在沒有內容，我也沒有急著刪。
 
----
+因為空白不代表沒有用途。
 
-## 3. Post Encryption
+未來真的想放東西時，位置還在，就可以直接開始。
 
-Shirone provides client-side post encryption. This is a static password gate, not server-side access control: the encrypted payload and asset URLs remain publicly downloadable, so do not use it for genuinely confidential files or regulated secrets. For private journals or restricted articles, specify a password in frontmatter:
+這也讓網站保留了一點成長的空間。
 
-```yaml
----
-title: "Private Research Notes"
-published: 2026-08-26
-encrypted: true
-password: "your-secret-passphrase"
-passwordHint: "Favorite anime character"
-hideHomeContent: true
----
-```
+## 最後才是細節
 
-- `encrypted`: Set to `true` to enable encryption;
-- `password`: Passphrase string or number required to unlock the post;
-- `passwordHint`: Optional hint shown above the password entry form;
-- `hideHomeContent`: Hide word counts and content previews on the homepage to prevent data leakage.
+當內容和結構穩定之後，才慢慢調整顏色、文字、圖片、間距和手機版。
 
----
+網站就是這樣一點一點變成自己的。
 
-## 4. Organizing Post Files
+不需要一天完成。
 
-Shirone supports both folder-based co-location and single-file layouts:
-
-### Folder Structure (Recommended for Local Assets)
-
-Co-locating your post and its media makes asset management straightforward:
-
-```text
-src/content/posts/
-├── my-great-post/
-│   ├── index.md           <-- Post content
-│   ├── cover.webp         <-- Cover image (image: "./cover.webp")
-│   └── diagram.png        <-- Inline illustration referenced in markdown
-```
-
-### Single-File Structure (Lightweight Prose)
-
-```text
-src/content/posts/
-├── hello-world.md
-└── quick-thoughts.md
-```
-
----
-
-## 5. Rich Markdown & MDX Extensions
-
-Shirone includes modern Markdown extensions out of the box:
-
-### 5.1 Admonitions
-
-Use container directives for notes, tips, warnings, and alerts:
-
-```markdown
-:::tip
-Use admonition containers to highlight key takeaways or best practices.
-:::
-
-:::warning
-Use warning containers to signal potential pitfalls or breaking changes.
-:::
-```
-
-### 5.2 GitHub Repository Cards
-
-Embed live, beautifully styled GitHub repository cards using the directive syntax:
-
-```markdown
-::github{repo="LyraVoid/Shirone"}
-```
-
-::github{repo="LyraVoid/Shirone"}
-
-### 5.3 Expressive Code Blocks
-
-Enhanced code blocks feature syntax highlighting, file name badges, line numbers, and selective line highlighting:
-
-```typescript title="src/utils/theme.ts" {2,4-5}
-// Dynamic HCT color token derivation
-import { argbFromHex, themeFromSourceColor } from "@material/material-color-utilities";
-
-const theme = themeFromSourceColor(argbFromHex("#f472b6"));
-console.log("Primary color token:", theme.schemes.light.primary);
-```
-
-### 5.4 Mathematical Typesetting (KaTeX)
-
-Render elegant LaTeX mathematical notation directly in Markdown:
-
-- **Inline math**: $E = mc^2$ or Euler's formula $e^{i\pi} + 1 = 0$.
-- **Block math**:
-
-$$
-\int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}
-$$
-
-### 5.5 Mermaid Diagrams
-
-Create flowcharts, sequence diagrams, and architecture maps using plain text:
-
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Visitor as Visitor
-    participant Page as Shirone Page
-    participant Swup as Swup Container
-    participant Audio as Persistent Shell
-
-    Visitor->>Page: Click Navigation Link
-    Page->>Swup: Trigger Seamless Transition
-    Swup->>Page: Replace #swup-container
-    Note over Audio: Background music plays continuously
-    Page-->>Visitor: New Page Rendered
-```
-
-### 5.6 Image Galleries & Fancybox Lightbox
-
-Images automatically integrate with Fancybox for lossless zoom, pan gestures, and full-screen preview:
-
-```markdown
-![Cover preview](./cover.jpeg)
-```
-
----
-
-## 6. Next Steps & Customization
-
-- **Site Configuration**: Learn about global settings in `src/config/siteConfig.ts` and [`src/config/README.md`](https://github.com/LyraVoid/Shirone/blob/main/src/config/README.md).
-- **Design Tokens**: Explore tokens and color palettes in `DESIGN.md` and `docs/m3e-standard.md`.
-- **Feedback & Community**: Share your ideas and questions on [GitHub Issues](https://github.com/LyraVoid/Shirone/issues).
+只要每次回來，都比上一次更像 Chi。
