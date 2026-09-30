@@ -64,9 +64,9 @@ export const LinkPresets: Record<string, NavBarLink> = {
 	},
 	Compass: {
 		name: i18n(I18nKey.compass),
-		url: "/compass/",
+		url: "https://nav.chi.qzz.io/",
 		icon: "material-symbols:explore-rounded",
-		pageKey: "compass",
+		external: true,
 	},
 	Skills: {
 		name: i18n(I18nKey.skills),
