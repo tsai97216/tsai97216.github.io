@@ -1,38 +1,40 @@
 ---
-title: Include Video in the Posts
-published: 2023-08-01
-description: This post demonstrates how to include embedded video in a blog post.
-tags: [Example, Video]
-series: media-embeds
-seriesOrder: 1
-category: Examples
+title: "我怎麼看待自己的網站"
+published: 2026-09-13
+description: "我不想把網站做成什麼都塞得滿滿的地方。"
+tags: [網站, 設計, 隨筆]
+category: 隨筆
 draft: false
 ---
 
-Just copy the embed code from YouTube or other platforms, and paste it in the markdown file.
+我以前很容易覺得，一個網站應該要有很多東西才算完整。
 
-```yaml
----
-title: Include Video in the Post
-published: 2023-10-19
-// ...
----
+文章要多、頁面要多、功能要多，好像越滿越厲害。
 
-<iframe width="100%" height="468" src="https://www.youtube.com/embed/5gIf0_xpFPI?si=N1WTorLKL0uwLsU_" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-```
+但現在反而覺得，留白也可以是網站的一部分。
 
-## YouTube
+## 不一定每天更新
 
-::youtube{id="5gIf0_xpFPI" title="YouTube video" preload="auto"}
+這是一個個人網站，不是新聞網站。
 
-## Bilibili
+如果一段時間沒有新的東西，也沒有關係。
 
-::bilibili{bvid="BV1fK4y1s7Qf" title="Bilibili video" p=1 preload="auto"}
+真正有值得留下的事情，再寫就好。
 
-## AcFun
+## 不一定每個功能都要用
 
-::acfun{acid="ac48649632" title="AcFun video" preload="auto"}
+主題裡有很多功能，我不需要全部拿來展示。
 
-## ArtPlayer
+只要它們沒有妨礙網站運作，就可以安靜地留著。
 
-::artplayer{src="https://www.pexels.com/download/video/38538991/" title="Sintel trailer" preload="auto"}
+未來真的需要時，再把它拿出來。
+
+## 我希望它最後像什麼？
+
+大概是一個安靜的角落。
+
+有一些正在做的專案、有一些使用過的工具、有一些偶爾想寫下來的事情。
+
+不需要很熱鬧。
+
+只要幾個月後再回來看，還能認出這是自己的網站，就很好了。
