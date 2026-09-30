@@ -42,15 +42,15 @@ export const projectsData: ProjectItem[] = [
 		year: "2026",
 	},
 	{
-		key: "free-games-claimer",
-		title: "Free Games Claimer",
+		key: "nav",
+		title: "Nav",
 		summary:
-			"部署在 VPS 上的免費遊戲領取自動化服務，集中管理與執行遊戲平台任務。",
-		category: "infrastructure",
+			"自己的網站導航，整理常用網站、工具與服務。",
+		category: "web",
 		phase: "building",
-		technologies: ["Docker", "Docker Compose", "Ubuntu", "Cloudflare Tunnel"],
-		icon: "material-symbols:cloud-sync-rounded",
-		featured: true,
+		technologies: ["Web", "Cloudflare"],
+		icon: "material-symbols:explore-rounded",
+		website: "https://nav.chi.qzz.io/",
 		year: "2026",
 	},
 ];
