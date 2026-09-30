@@ -1,96 +1,36 @@
 ---
-title: Markdown Steps
-published: 2026-08-27
-description: Present sequential instructions as a compact, accessible step flow in Shirone.
-tags: [Demo, Markdown, Steps, Shirone]
-category: Guides
-lang: en
+title: "一個小網站從想法到上線"
+published: 2026-09-14
+description: "我現在比較喜歡把網站拆成幾個小步驟，一點一點完成。"
+tags: [網站, Astro, GitHub, Cloudflare]
+category: 網站
 draft: false
 ---
 
-Use Steps for procedures whose order matters. The component keeps the article reading flow intact: a quiet numbered rail provides orientation while headings, paragraphs, links, lists, and code retain their native Markdown roles.
+做一個網站聽起來很大，但真的開始之後，其實可以拆得很小。
 
-## Ordered list syntax
+## 先讓它跑起來
 
-Wrap one Markdown ordered list in a `:::steps` container. Each top-level list item becomes one step.
+第一步不是做漂亮。
 
-````markdown
-:::steps[Production deployment]
-1. **Clone and prepare the workspace**
+是先確認專案能啟動、能建置，知道程式碼大概放在哪裡。
 
-   Clone the repository and enter the project directory.
+## 再換成自己的內容
 
-   ```powershell
-   git clone https://github.com/LyraVoid/Shirone.git
-   Set-Location Shirone
-   ```
+接著才處理名稱、介紹、資料、頁面和文章。
 
-2. **Install dependencies**
+這個階段最容易忍不住大改，但我現在會盡量一次只處理一小塊。
 
-   Use the repository's pinned package manager.
+## 把網域接上去
 
-   ```powershell
-   pnpm.cmd install
-   ```
+網站有自己的內容之後，再處理部署和網域。
 
-3. **Run project checks**
+對我來說，看到 `chi.qzz.io` 真正能打開的那一刻，才算是這個網站開始「活著」。
 
-   Confirm Astro diagnostics and TypeScript checks pass.
+## 最後才是細節
 
-   ```powershell
-   npx.cmd astro check
-   pnpm.cmd type-check
-   ```
+字距、圖片、卡片、空白、手機版和桌面版的差異，都可以慢慢調。
 
-4. **Build the production site**
+它們不需要第一天就完美。
 
-   Generate the static site and search index.
-
-   ```powershell
-   pnpm.cmd build
-   ```
-:::
-````
-
-:::steps[Production deployment]
-1. **Clone and prepare the workspace**
-
-   Clone the repository and enter the project directory.
-
-   ```powershell
-   git clone https://github.com/LyraVoid/Shirone.git
-   Set-Location Shirone
-   ```
-
-2. **Install dependencies**
-
-   Use the repository's pinned package manager.
-
-   ```powershell
-   pnpm.cmd install
-   ```
-
-3. **Run project checks**
-
-   Confirm Astro diagnostics and TypeScript checks pass.
-
-   ```powershell
-   npx.cmd astro check
-   pnpm.cmd type-check
-   ```
-
-4. **Build the production site**
-
-   Generate the static site and search index.
-
-   ```powershell
-   pnpm.cmd build
-   ```
-:::
-
-## Options
-
-- `:::steps[Title]` or `title="Title"` adds a visible label and accessible name.
-- `start=4` changes the first displayed step number.
-- The container must contain exactly one ordered list. Invalid or mixed input remains ordinary readable Markdown instead of being interpreted heuristically.
-- Rendering is completed during the site build and adds no client JavaScript or network requests.
+真正重要的是，這個網站之後還有地方可以繼續變。
