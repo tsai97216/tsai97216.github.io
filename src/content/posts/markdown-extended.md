@@ -1,125 +1,38 @@
 ---
-title: Markdown Extended Features
-published: 2024-05-01
-updated: 2024-11-29
-description: 'Read more about Markdown features in Fuwari'
-image: ''
-tags: [Demo, Example, Markdown, Fuwari]
-series: markdown-syntax-guide
-seriesOrder: 2
-draft: false 
+title: "我的裝置們"
+published: 2026-09-23
+description: "目前陪著我處理日常、寫網站與整理資料的幾台裝置。"
+tags: [裝置, Apple, 電腦]
+category: 裝置
+draft: false
 ---
 
-## GitHub Repository Cards
-You can add dynamic cards that link to GitHub repositories, on page load, the repository information is pulled from the GitHub API. 
+目前手邊主要有三台裝置。
 
-::github{repo="Fabrizz/MMM-OnSpotify"}
+## iPhone 13 Pro
 
-Create a GitHub repository card with the code `::github{repo="<owner>/<repo>"}`.
+它是最常隨身帶著的那台。
 
-```markdown
-::github{repo="saicaca/fuwari"}
-```
+查資料、看訊息、拍照、處理一些臨時事情都靠它。
 
-## Mermaid Diagrams
+它最大的優點不是什麼規格，而是一直在手邊。
 
-Fenced `mermaid` blocks are rendered as diagrams and follow the active color scheme.
+## iPad Air 5
 
-```mermaid
-flowchart LR
-    accTitle: Markdown rendering pipeline
-    accDescr: Markdown source is transformed into semantic HTML and then enhanced as a themed SVG diagram.
-    A[Markdown source] --> B[Astro content pipeline]
-    B --> C[Semantic HTML]
-    C --> D[Themed diagram]
-```
+比較適合閱讀和整理東西。
 
-## Admonitions
+當畫面需要大一點時，它就會比手機舒服很多。
 
-Following types of admonitions are supported: `note` `tip` `important` `warning` `caution`
+有些事情在手機上可以做，但真的沒有必要。
 
-:::note
-Highlights information that users should take into account, even when skimming.
-:::
+## Acer Swift 5
 
-:::tip
-Optional information to help a user be more successful.
-:::
+這台才是比較正經的工作區。
 
-:::important
-Crucial information necessary for users to succeed.
-:::
+寫網站、處理 GitHub、跑一些工具，還是需要完整的鍵盤和桌面環境。
 
-:::warning
-Critical content demanding immediate user attention due to potential risks.
-:::
+三台裝置各自有自己的位置。
 
-:::caution
-Negative potential consequences of an action.
-:::
+我不太追求所有東西都用同一台。
 
-### Basic Syntax
-
-```markdown
-:::note
-Highlights information that users should take into account, even when skimming.
-:::
-
-:::tip
-Optional information to help a user be more successful.
-:::
-```
-
-### Custom Titles
-
-The title of the admonition can be customized.
-
-:::note[MY CUSTOM TITLE]
-This is a note with a custom title.
-:::
-
-```markdown
-:::note[MY CUSTOM TITLE]
-This is a note with a custom title.
-:::
-```
-
-### GitHub Syntax
-
-> [!TIP]
-> [The GitHub syntax](https://github.com/orgs/community/discussions/16925) is also supported.
-
-```
-> [!NOTE]
-> The GitHub syntax is also supported.
-
-> [!TIP]
-> The GitHub syntax is also supported.
-```
-
-### Spoiler
-
-You can add spoilers to your text. The text also supports **Markdown** syntax.
-
-The content :spoiler[is hidden **ayyy**]!
-
-```markdown
-The content :spoiler[is hidden **ayyy**]!
-
-```
-
-## Image Widths and Captions
-
-A standalone image accepts an optional `w-N%` width token in its alt text and a Markdown title rendered as a centered caption below the image:
-
-![Album example image w-50%](/images/albums/AcgExample/07.webp "Half-width image with a caption")
-
-```markdown
-![Image description w-50%](./image.webp "Visible caption")
-```
-
-Valid widths range from `w-1%` to `w-100%`; invalid tokens stay in the alt text. The width and the caption are independent — a title alone also produces a caption:
-
-![Album example image w-75%](/images/albums/AcgExample/08.webp)
-
-![Album example image](/images/albums/AcgExample/09.webp "Caption without a width token")
+只要它們能互相補位就好。
