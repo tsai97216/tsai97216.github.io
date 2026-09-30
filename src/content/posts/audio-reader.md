@@ -1,28 +1,32 @@
 ---
-title: "Audio Reader: Japanese Anime Mystery Voices"
-published: 2026-08-29
-description: A small collection of mysterious Japanese anime voice fragments, played on demand with Audio Reader.
-tags: [Example, Audio Reader]
-series: media-embeds
-seriesOrder: 2
-category: Examples
+title: "我為什麼又開始整理自己的網站"
+published: 2026-09-29
+description: "網站明明已經能用了，為什麼還是會忍不住一直改？"
+tags: [網站, 開發, 隨筆]
+category: 隨筆
 draft: false
 ---
 
-These short Japanese voice fragments feel as though they were picked up from the edge of an anime scene: a teasing call, a bright greeting, a tiny laugh, and a few lines with no clear origin. They are mood samples rather than dialogue transcripts, so let the sound carry the meaning.
+網站做到可以用，和網站做到自己喜歡，是兩件完全不同的事情。
 
-Audio Reader keeps them quiet until you choose to listen. Each speaker button loads and plays its clip only after it is pressed.
+前者比較像「功能都有了」。
 
-```markdown
-:audio-reader[Clip title]{src="/assets/audio/filename.wav"}
-```
+後者則會開始出現很多很細的問題：這個字是不是太大、這個間距是不是怪怪的、這個頁面放在這裡有沒有意義、為什麼某個按鈕看起來就是不像自己的網站。
 
-## The fragments
+這也是我最近一直回頭整理網站的原因。
 
-- **Baka**: :audio-reader[バカ]{src="/assets/audio/Baka.wav"}
-- **Ciallo**: :audio-reader[Ciallo！！]{src="/assets/audio/Ciallo.wav"}
-- **Ehe**: :audio-reader[A joking sense]{src="/assets/audio/Ehe.wav"}
-- **Imoi**: :audio-reader[イモい]{src="/assets/audio/Imoi.wav"}
-- **Zako**: :audio-reader[雑魚じゃん、雑魚雑魚]{src="/assets/audio/Zako.wav"}
+其實它已經可以正常部署，也可以從自己的網域打開。但我還是想把那些很明顯的模板痕跡慢慢換掉。
 
-`src` must use a site-root path or an HTTPS URL, and the directive label cannot be empty. Invalid or incomplete directives remain ordinary Markdown and do not load Audio Reader resources.
+## 不急著一次完成
+
+我現在比較喜歡小幅修改。
+
+先改一個資料檔，確認網站正常，再處理下一個頁面。這樣每次變動都很小，但累積起來，網站就會慢慢變成另一個樣子。
+
+這種節奏其實也比較符合我做東西的方式。
+
+先讓它跑起來。
+
+然後再修。
+
+最後某一天突然發現，欸，這真的已經是自己的網站了。
