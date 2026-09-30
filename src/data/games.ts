@@ -1,6 +1,5 @@
 /**
- * 游戏展示页数据源（纯内容）。
- * 页面展示与筛选规则由 src/config/gamesConfig.ts 控制。
+ * 遊戲展示頁資料。
  */
 import type { GameItem } from "@/types/gamesConfig";
 
@@ -14,9 +13,8 @@ export const gamesData: GameItem[] = [
 		icon: "material-symbols:auto-awesome-rounded",
 		platform: "PC / Mobile",
 		year: "2023",
-		tags: ["RPG", "Turn-Based", "Sci-Fi"],
-		description:
-			"目前仍會保留並遊玩的遊戲，日常負擔較低，也是在忙於學測準備時比較容易維持的遊戲之一。",
+		tags: ["RPG"],
+		description: "目前會保留並遊玩的遊戲。",
 		link: "https://hsr.hoyoverse.com/",
 		featured: true,
 	},
@@ -29,9 +27,8 @@ export const gamesData: GameItem[] = [
 		icon: "material-symbols:bolt-rounded",
 		platform: "PC / Mobile",
 		year: "2024",
-		tags: ["Action RPG", "Urban Fantasy", "Anime"],
-		description:
-			"目前保留的另一款主要遊戲，和星穹鐵道一起作為平時偶爾遊玩的作品。",
+		tags: ["Action RPG"],
+		description: "目前保留的另一款主要遊戲。",
 		link: "https://zenless.hoyoverse.com/",
 		featured: true,
 	},
