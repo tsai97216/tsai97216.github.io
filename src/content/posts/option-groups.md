@@ -1,115 +1,41 @@
 ---
-title: Markdown Option Groups
-published: 2026-08-28
-description: Present related Markdown alternatives in compact, synchronized M3E option groups.
-tags: [Demo, Markdown, Tabs, Shirone]
-category: Guides
-lang: en
+title: "我怎麼選工具"
+published: 2026-09-16
+description: "工具很多，但我通常只在意它能不能穩定解決眼前的問題。"
+tags: [工具, 開發, 隨筆]
+category: 開發
 draft: false
 ---
 
-Option groups keep equivalent instructions together without repeating the surrounding explanation. Each option accepts full block Markdown, while the selected value can synchronize with another group on the same page.
+我很容易在選工具這件事情上卡住。
 
-## Choose a package manager
+因為選項太多了，而且每個看起來都各有優點。
 
-Use `@tab:active` to select the initial option. A suffix after `#` supplies a stable value without changing the visible title.
+所以現在比較常用一個很簡單的順序。
 
-::: tabs#package-manager
+## 先看能不能解決問題
 
-@tab npm
+如果一個工具能完成需求，而且維護成本合理，那它已經及格。
 
-Install the package with npm:
+不需要因為別人的技術棧更華麗，就把正在工作的東西換掉。
 
-```powershell
-npm install astro
-```
+## 再看長期成本
 
-@tab:active **pnpm**#pnpm
+我會特別在意幾件事：
 
-Install the package with pnpm:
+- 能不能看懂
+- 出問題時好不好查
+- 更新會不會很麻煩
+- 之後自己還記不記得怎麼用
 
-```powershell
-pnpm.cmd add astro
-```
+最後一項其實很重要。
 
-@tab Bun#bun
+因為半年後維護它的人，通常還是自己。
 
-Install the package with Bun:
+## 最後才是喜好
 
-```powershell
-bun add astro
-```
+真的都能用的時候，我才會開始挑自己比較喜歡的。
 
-:::
+介面順眼、文件清楚、命令簡單，這些都很好。
 
-## Run the project
-
-This group shares the `package-manager` id. Selecting an option above updates the matching command below and remembers that choice for the next visit.
-
-::: tabs#package-manager
-
-@tab npm
-
-```powershell
-npm run dev
-```
-
-@tab pnpm
-
-```powershell
-pnpm.cmd dev
-```
-
-@tab Bun#bun
-
-```powershell
-bun run dev
-```
-
-:::
-
-## Many alternatives
-
-Longer option rows remain on one line and scroll within their own navigation area on narrow screens.
-
-::: tabs
-
-@tab Local workstation
-
-Use the local toolchain while developing a feature.
-
-@tab Hosted preview environment
-
-Publish a temporary preview for review.
-
-@tab Continuous integration
-
-Run deterministic validation for every change.
-
-@tab Production deployment
-
-Promote a verified artifact to production.
-
-@tab Offline recovery workflow
-
-Restore from a local artifact when the network is unavailable.
-
-:::
-
-## Author syntax
-
-````markdown
-::: tabs#package-manager
-
-@tab npm
-
-Use npm instructions here.
-
-@tab:active **pnpm**#pnpm
-
-Use pnpm instructions here.
-
-:::
-````
-
-Each group needs at least two `@tab` sections, and every section needs body content separated from its marker by a blank line. Invalid or incomplete groups remain readable as ordinary Markdown.
+但如果一個工具只是看起來很酷，卻讓未來的自己更痛苦，那我寧願選樸素一點的方案。
