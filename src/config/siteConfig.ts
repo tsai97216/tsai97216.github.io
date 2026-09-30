@@ -13,7 +13,7 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 	site: "https://chi.qzz.io/",
 	base: "/",
 	title: "Chi",
-	subtitle: "把正在發生的事，慢慢留下來",
+	subtitle: "不知道要寫什麼",
 	// 电脑端顶栏标题与导航内容区域："left" 左对齐，"center" 居中。
 	topAppBar: {
 		contentAlign: "center",
