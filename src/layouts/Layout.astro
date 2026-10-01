@@ -153,7 +153,8 @@ const hasMonoFont =
 		{umamiOptions?.websiteId && umamiOptions.scriptUrl && (
 			<script is:inline async src={umamiOptions.scriptUrl} data-website-id={umamiOptions.websiteId} data-auto-track="true"></script>
 		)}
-				{favicons.map(favicon => (
+				<link rel="apple-touch-icon" href={url("/logo/icon.webp")} />
+		{favicons.map(favicon => (
 			<link rel="icon"
 				href={favicon.src.startsWith('/') ? url(favicon.src) : favicon.src}
 				sizes={favicon.sizes}
