@@ -22,6 +22,7 @@ export const musicConfig: MusicConfig = withUserConfig("music", {
 export interface ResolvedMusicOptions {
 	readonly provider: MusicProvider;
 	readonly playlist: readonly TrackDescriptor[];
+	readonly meting?: MusicConfig["meting"];
 	readonly defaultVolume: number;
 	readonly defaultMode: PlaybackMode;
 }
