@@ -57,8 +57,8 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 		// desktop 用于 >= 1024px；mobile 仅用于 < 1024px 的首页，手机非首页不显示壁纸。
 		// 数组顺序就是轮播顺序；只需要静态 Banner 时，每组保留一张图片即可。
 		src: {
-			desktop: ["/upload/banner.webp"],
-			mobile: ["/upload/banner.webp"],
+			desktop: ["assets/images/banner/desktop/1.webp"],
+			mobile: ["assets/images/banner/mobile/1.webp"],
 		},
 		// 图片裁切焦点："top"、"center" 或 "bottom"。
 		position: "center",
@@ -115,7 +115,7 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 	},
 	favicon: [
 		// 浏览器标签页图标，路径相对于 public 目录。
-		{ src: "/upload/icon.png" },
+		{ src: "/logo/icon.webp" },
 	],
 });
 
