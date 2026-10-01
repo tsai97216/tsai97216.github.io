@@ -1,27 +1,21 @@
 {
-  "name": "shirone",
+  "name": "chi-personal-site",
   "type": "module",
   "version": "1.0.3",
-  "description": "An expressive, anime-inspired blog theme built on Material 3 Expressive, Astro 7, and Svelte 5",
+  "description": "Chi 的個人網站。",
   "license": "MIT",
-  "author": "matsuzaka-yuki",
-  "homepage": "https://shirone.mysqil.com/",
+  "author": "Chi",
+  "homepage": "https://chi.qzz.io/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LyraVoid/Shirone.git"
-  },
-  "bugs": {
-    "url": "https://github.com/LyraVoid/Shirone/issues"
+    "url": "https://github.com/tsai97216/tsai97216.github.io.git"
   },
   "keywords": [
     "astro",
-    "astro-theme",
-    "blog-theme",
-    "material-design-3",
-    "material-3-expressive",
-    "m3e",
-    "svelte-5",
-    "tailwindcss-4"
+    "svelte",
+    "typescript",
+    "tailwindcss",
+    "personal-site"
   ],
   "scripts": {
     "dev": "node scripts/content/sync.mjs && node scripts/icons/generate-local-icons.mjs && node scripts/images/generate-moment-thumbnails.mjs && astro dev",
