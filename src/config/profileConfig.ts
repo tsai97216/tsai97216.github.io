@@ -6,7 +6,7 @@ import { withUserConfig } from "../utils/config-overlay.ts";
  * 類型見 src/types/config.ts。
  */
 export const profileConfig: ProfileConfig = withUserConfig("profile", {
-	avatar: "/upload/avatar.webp",
+	avatar: "assets/images/demo-avatar.webp",
 	name: "齊",
 	bio: "不知道要寫什麼",
 	links: [
