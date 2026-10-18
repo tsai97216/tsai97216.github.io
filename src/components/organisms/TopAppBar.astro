@@ -46,8 +46,6 @@ function isActive(link: (typeof links)[number]): boolean {
 			href={url("/")}
 			class="group flex h-10 items-center gap-2 px-2 text-[var(--on-surface)] transition whitespace-nowrap"
 		>
-			<img class="h-7 w-7 object-contain dark:hidden" src="https://raw.githubusercontent.com/tsai97216/chi-design-system/main/logo/gray-b.png" alt="" aria-hidden="true" />
-			<img class="hidden h-7 w-7 object-contain dark:block" src="https://raw.githubusercontent.com/tsai97216/chi-design-system/main/logo/gray-w.png" alt="" aria-hidden="true" />
 			<span class="text-lg font-bold group-hover:text-[var(--primary)]">{siteConfig.title}</span>
 		</a>
 		<nav class:list={["top-app-bar__nav hidden h-full items-center gap-1 lg:flex", siteConfig.topAppBar.contentAlign === "center" ? "lg:absolute lg:left-1/2 lg:-translate-x-1/2" : "ml-4"]} aria-label="Main navigation">
